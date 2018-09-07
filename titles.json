@@ -1,5 +1,5 @@
 var titletypes=[
-"royal","noble","military","scholarly"
+"royal","noble","military","trade","scholarly"
 	]
 var titles= {
 	"royal":[
