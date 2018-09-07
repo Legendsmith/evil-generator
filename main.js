@@ -30,18 +30,6 @@ function gentitle(_type,realm){
 	return txt
 }
 
-function doheader(){
-	getId("h3_header").style.color = getRandomColor()
-}
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
 function donames(){
 	var namelist = getId("ta_nameput")
 	var name ="the"
