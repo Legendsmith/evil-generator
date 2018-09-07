@@ -1,0 +1,60 @@
+{
+	"Royal":[
+		"Lord",
+		"King",
+		"Czar",
+		"Prince",
+		"Emperor",
+		"Khan",
+		"Devaraja",
+		"Despot",
+		"Dictator",
+		"Emperator",
+		"Tyrant"
+	],
+	"Noble":[
+		"Duke",
+		"Marquess",
+		"Earl",
+		"Viscount",
+		"Viceroy",
+		"Count",
+		"Baron",
+		"Magnate",
+		"Knight"
+	],
+	"military":[
+		"Commander",
+		"General",
+		"Lieutenant",
+		"Major",
+		"Chief"
+	],
+	"trade":[
+		"Dealer",
+		"Merchant",
+		"Broker",
+		"Peddler",
+		"Banker",
+		"Exchequer"
+	],
+	"scholarly":[
+		"Poet",
+		"Composer",
+		"Scrivener",
+		"Invoker",
+		"Elder",
+		"Rector",
+		"Adept",
+		"Teacher"
+	]
+}
+
+"pre-adjectives":[
+	"Grand ",
+	"Arch-",
+	"High ",
+	"Dread ",
+	"Ur-",
+	"Wicked "
+]
