@@ -17,8 +17,26 @@ textarea{
 
 h3{
   text-shadow: 2px 2px 1px #ed1c24
-
 }
+
+a:link{
+  color: #ee2b31;
+}
+/* visited link */
+a:visited {
+    color: #a50d12;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FAA;
+}
+
+/* selected link */
+a:active {
+    color: #FEE;
+}
+
  /* Tooltip container */
 .tooltip {
     position: relative;
