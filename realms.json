@@ -1,4 +1,13 @@
-{
+var realmtypes=[
+    "7sins",
+    "nurglite",
+    "social-sins",
+    "violence",
+    "void",
+    "fear"
+]
+
+var realms= {
   "7sins": [
     "Lust",
     "Gluttony",
@@ -8,7 +17,7 @@
     "Envy",
     "Pride"
   ],
-  "Nurglite": [
+  "nurglite": [
     "Death",
     "Rot",
     "Decay",
@@ -27,7 +36,7 @@
     "Necrosis",
     "Neglect"
   ],
-  "Social-sins":[
+  "social-sins":[
     "Untruth",
     "Lies",
     "Falsehood",
@@ -60,16 +69,16 @@
         "Invasions"
     ],
     "void":[
-        "Obliteration"
+        "Obliteration",
         "Annihilation",
         "Destruction",
         "Extinction",
         "Extinguishment",
         "Disintergration",
-        "Cataclysm"
+        "Cataclysm",
         "Abyss"
     ],
-    "Fear":[
+    "fear":[
         "Terror",
         "Fear",
         "Horror",

@@ -1,5 +1,8 @@
-{
-	"Royal":[
+var titletypes=[
+"royal","noble","military","scholarly"
+	]
+var titles= {
+	"royal":[
 		"Lord",
 		"King",
 		"Czar",
@@ -12,7 +15,7 @@
 		"Emperator",
 		"Tyrant"
 	],
-	"Noble":[
+	"noble":[
 		"Duke",
 		"Marquess",
 		"Earl",
@@ -50,7 +53,12 @@
 	]
 }
 
-"pre-adjectives":[
+var adj = [
+	"",
+	"",
+	"",
+	"",
+	"",
 	"Grand ",
 	"Arch-",
 	"High ",
