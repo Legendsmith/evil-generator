@@ -64,5 +64,17 @@ var adj = [
 	"High ",
 	"Dread ",
 	"Ur-",
-	"Wicked "
+	"Wicked ",
+	"Dark ",
+	"Neo-",
+	"Ancient ",
+	"Deadly ",
+	"Black "
+]
+
+var headertxt = [
+"Behold ",
+"Witness ",
+"Gaze upon and Weep at ",
+"Observe the Glory of "
 ]

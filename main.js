@@ -14,14 +14,41 @@ function generate(){
 	var _title= randum(titles[_titletype])
 	var _realmtype= randum(realmtypes)
 	var _realm = randum(realms[_realmtype])
-	var outtext =`You have unleashed the: ${randum(adj)}${_title} of ${_realm}\n`
-	console.log(outtext)
-	getId("ta_output").value = getId("ta_output").value + outtext
-
+	var outtext =`${randum(adj)}${_title} of ${_realm}`
+	var name = donames()
+	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
+	getId("h3_header").innerHTML = `${randum(headertxt)} ${name} ${outtext}`
+	getId("ta_output").scrollTop = getId("ta_output").scrollHeight;
 }
 
 function gentitle(_type,realm){
 	var txt = ""
 	txt  =`${titles[_type][randum(titles[_type])]} of ${realms[realm][randum(realms[realm])]}`
 	return txt
+}
+
+function doheader(){
+	getId("h3_header").style.color = getRandomColor()
+}
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function donames(){
+	var namelist = getId("ta_nameput")
+	var name ="the"
+	if (namelist.value != ""){
+		var namevalue =namelist.value.replace("	","\n")
+		var namearray = namevalue.split("\n")
+		name =namearray[0].trim()+","
+		namearray.splice(0,1)
+		text = namearray.join("\n")
+		namelist.value = text
+	}
+	return name
 }
