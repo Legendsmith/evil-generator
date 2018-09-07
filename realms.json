@@ -34,7 +34,7 @@ var realms= {
     "Depravation",
     "Putrifaction",
     "Necrosis",
-    "Neglect"
+    "Disease"
   ],
   "social-sins":[
     "Untruth",

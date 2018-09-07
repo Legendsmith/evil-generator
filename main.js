@@ -4,20 +4,24 @@ function getId(str){
 }
 
 function randum(_array){
-	return Math.floor(Math.random() * _array.length)
+	var nx = new Uint8Array(1)
+	window.crypto.getRandomValues(nx)
+	return _array[Math.floor(nx[0]/255 * _array.length)]
 }
 
 function generate(){
-	var _titletype= titletypes[randum(titletypes)]
-	var _title= titles[_titletype][randum(titles[_titletype])]
-	var _realmtype= realmtypes[randum(realmtypes)]
-	var _realm = realms[_realmtype][randum(realms[_realmtype])]
-	var outtext =`You have unleashed the: ${adj[randum(adj)]}${_title} of ${_realm}\n`
+	var _titletype= randum(titletypes)
+	var _title= randum(titles[_titletype])
+	var _realmtype= randum(realmtypes)
+	var _realm = randum(realms[_realmtype])
+	var outtext =`You have unleashed the: ${randum(adj)}${_title} of ${_realm}\n`
 	console.log(outtext)
 	getId("ta_output").value = getId("ta_output").value + outtext
 
 }
 
-function generate2(){
-
+function gentitle(_type,realm){
+	var txt = ""
+	txt  =`${titles[_type][randum(titles[_type])]} of ${realms[realm][randum(realms[realm])]}`
+	return txt
 }
