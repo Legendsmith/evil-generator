@@ -12,12 +12,12 @@ function generate(){
 	var _title= titles[_titletype][randum(titles[_titletype])]
 	var _realmtype= realmtypes[randum(realmtypes)]
 	var _realm = realms[_realmtype][randum(realms[_realmtype])]
-	var outtext =`You have unleashed the... ${adj[randum(adj)]}${_title} of ${_realm}\n`
+	var outtext =`You have unleashed the: ${adj[randum(adj)]}${_title} of ${_realm}\n`
 	console.log(outtext)
 	getId("ta_output").value = getId("ta_output").value + outtext
 
 }
 
 function generate2(){
-	
+
 }
