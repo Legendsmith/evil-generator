@@ -6,14 +6,15 @@ function getId(str){
 function randum(_array){
 	var nx = new Uint8Array(1)
 	window.crypto.getRandomValues(nx)
-	return _array[Math.floor(nx[0]/255 * _array.length-1)]
+	var nz = Math.ceil(nx[0]/255 * _array.length-1)
+	console.log(nz)
+	return _array[nz]
 }
 
 function generate(){
 	var namex = donames()
 	var name = namex[0]
 	var gender = namex[1]
-	console.log(gender)
 	var _titletype= randum(titletypes)
 	var _title= randum(titles[_titletype])
 	var _realmtype= randum(realmtypes)
@@ -45,3 +46,4 @@ function donames(){
 	}
 	return [name,gender]
 }
+
