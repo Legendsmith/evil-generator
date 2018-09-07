@@ -49,7 +49,7 @@ function donames(){
 	if (namelist.value != ""){
 		var namevalue =namelist.value.replace("	","\n")
 		var namearray = namevalue.split("\n")
-		name =namearray[0].trim()+","
+		name =namearray[0].split(":")[0].trim()+","
 		gender = namearray[0].split("|")[1]
 		namearray.splice(0,1)
 		text = namearray.join("\n")
