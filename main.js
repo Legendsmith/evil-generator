@@ -6,7 +6,7 @@ function getId(str){
 function randum(_array){
 	var nx = new Uint8ClampedArray(1)
 	window.crypto.getRandomValues(nx)
-	var ni = Math.floor(((nx[0]-1)/255) * _array.length)
+	var ni = Math.floor(((nx[0])/256) * _array.length)
 	console.log(ni)
 	return _array[ni]
 }
