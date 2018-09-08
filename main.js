@@ -7,12 +7,11 @@ function randum(_array){
 	var nx = new Uint8ClampedArray(1)
 	window.crypto.getRandomValues(nx)
 	var ni = Math.floor(((nx[0])/256) * _array.length)
-	console.log(ni)
 	return _array[ni]
 }
 
 function generate(){
-	console.log("new")
+	console.log("Generating...")
 	var namex = donames()
 	var name = namex[0]
 	var gender = namex[1].toLowerCase()
@@ -47,10 +46,13 @@ function donames(){
 		var namevalue =namelist.value.replace("	","\n")
 		var namearray = namevalue.split("\n")
 		name =namearray[0].split(":")[0].trim()+","
-		gender = namearray[0].split("|")[1]
+		gender = namearray[0].split(":")[1]
 		namearray.splice(0,1)
 		text = namearray.join("\n")
 		namelist.value = text
+	}
+	if (gender==null){
+		gender="m"
 	}
 	return [name,gender]
 }
