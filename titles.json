@@ -1,30 +1,28 @@
 var titletypes=[
-"royal","noble","military","trade","scholarly"
+"royal:g","noble:g","military:o","trade:o","scholarly:g","generic:g"
 	]
 var titles= {
 	"royal":[
-		"Lord",
-		"King",
-		"Czar",
-		"Prince",
-		"Emperor",
-		"Khan",
-		"Devaraja",
-		"Despot",
-		"Dictator",
-		"Imperator",
-		"Tyrant"
+		{"m":"Lord","f":"Lady"},
+		{"m":"King","f":"Queen"},
+		{"m":"Tzar","f":"Tsarina"},
+		{"m":"Emperor","f":"Emperess"},
+		{"m":"Khan","f":"Khanum"},
+		{"m":"Devaraja","f":"Mahadevi"},
+		{"m":"Despot","f":"Despot"},
+		{"m":"Dictator","f":"Dictator"},
+		{"m":"Imperator","f":"Imperatrix"},
+		{"m":"Tyrant","f":"Tyrant"}
 	],
 	"noble":[
-		"Duke",
-		"Marquess",
-		"Earl",
-		"Viscount",
-		"Viceroy",
-		"Count",
-		"Baron",
-		"Magnate",
-		"Knight"
+		{"m":"Prince","f":"Princess"},
+		{"m":"Duke","f":"Duchess"},
+		{"m":"Marquess","f":"Marchioness"},
+		{"m":"Earl","f":"Countess"},
+		{"m":"Count","f":"Countess"},
+		{"m":"Viscount","f":"Viscountess"},
+		{"m":"Baron","f":"Baroness"},
+		{"m":"Knight","f":"Dame"},
 	],
 	"military":[
 		"Commander",
@@ -34,6 +32,8 @@ var titles= {
 		"Chief"
 	],
 	"trade":[
+		"Magnate",
+		"Viceroy",
 		"Dealer",
 		"Merchant",
 		"Broker",
@@ -42,14 +42,18 @@ var titles= {
 		"Exchequer"
 	],
 	"scholarly":[
-		"Poet",
-		"Composer",
-		"Scrivener",
-		"Invoker",
-		"Elder",
-		"Rector",
-		"Adept",
-		"Teacher"
+		{"m":"Poet","f":"Poetess"},
+		{"m":"Composer","f":"Composer"},
+		{"m":"Scrivener","f":"Scrivener"},
+		{"m":"Invoker","f":"Invoker"},
+		{"m":"Elder","f":"Elder"},
+		{"m":"Rector","f":"Rector"},
+		{"m":"Adept","f":"Adept"},
+		{"m":"Teacher","f":"Teacher"}
+	],
+	"generic":[
+		{"m":"Father","f":"Mother"},
+		{"m":"Patriarch","f":"Matriarch"}
 	]
 }
 

@@ -15,9 +15,16 @@ function generate(){
 	console.log("new")
 	var namex = donames()
 	var name = namex[0]
-	var gender = namex[1]
-	var _titletype= randum(titletypes)
-	var _title= randum(titles[_titletype])
+	var gender = namex[1].toLowerCase()
+	var _titletypeR= randum(titletypes)
+	var _titletype = _titletypeR.split(":")[0] //title type raw
+	var _title = ""
+	if (_titletypeR.split(":")[1]=="g") {
+		_title= randum(titles[_titletype])[gender]
+	}else{
+		_title= randum(titles[_titletype])
+	};
+	
 	var _realmtype= randum(realmtypes)
 	var _realm = randum(realms[_realmtype])
 	var outtext =`${randum(adj)}${_title} of ${_realm}`
