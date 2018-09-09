@@ -29,7 +29,7 @@ var realms= {
     "Ruination",
     "Withering",
     "Filth",
-    "Decline",
+    "Degeneration",
     "Decomposition",
     "Stagnation",
     "Depravation",
@@ -41,6 +41,7 @@ var realms= {
     "Untruth",
     "Lies",
     "Falsehood",
+    "Deceit",
     "Hatred",
     "Animosity",
     "Malice",
@@ -104,3 +105,8 @@ var realms= {
     "Cruelty"
     ]
 }
+
+var realmAdjs =[
+    ""
+
+]

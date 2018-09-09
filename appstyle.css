@@ -16,7 +16,9 @@ textarea{
 }
 
 h3{
-  text-shadow: 1px 1px 1px #ed1c24
+  text-shadow: 1px 1px 1px #ed1c24;
+  height:42pt;
+  display:inline-block;
 }
 
 a:link{

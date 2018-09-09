@@ -1,0 +1,134 @@
+var wepdefs={	
+	"ofNoun":[
+		"Infinity",
+		"Confusion",
+		"Death"
+		"Strife"
+		"Madness"
+	],
+	"wepType":[
+		"Axe"
+		"Saber"
+		"Cutlass"
+		"Falchion"
+		"Glaive"
+		"Great Axe"
+		"Greatsword"
+		"Spear"
+		"Kopesh"
+		"Long Spear"
+		"Maul"
+		"Great Maul"
+		"Morningstar"
+		"Mace"
+		"Bastard Sword"
+		"Long Sword"
+		"Warhammer"
+		"Halberd"
+		"Sword"
+		"Blade"
+		"Whip"
+		"Scourge"
+	],
+	
+	"nurglite-wepAdj":[
+		"Rotting",
+		"Ever-Rusting",
+		"Blighted",
+		"Plague-Ridden",
+		"Pock-Marked",
+		"Life-Draining",
+		"Diseased",
+		"Essence Tainting",
+		"Blood Curdling",
+		"Corrupting",
+		"Pustulent",
+		"Necrotic",
+		"Infectious",
+		"Throbbing",
+		"Festering",
+		"Putrid",
+		"Septic"
+	],
+	
+	"socialsins-wepAdj":[
+		"Screaming",
+		"Wailing"
+		"Babbling"
+		"Mad"
+		"Keening"
+		"Shrieking"
+		"Sobbing"
+		"Malicous"
+		"Silent"
+		"Deceptive"
+		"Spiteful"
+		"Shadow"
+		"Whispering"
+		"Lying"
+		"Twisted"
+		"Silver Spun"
+		"Glittering"
+		"Blinding"
+		"Silencing"
+	],
+		"violence-wepAdj":[
+		"Vortex",
+		"Chaos",
+		"Dark",
+		"Fallen",
+		"Flaming",
+		"Smoking",
+		"Ashen",
+		"Blood",
+		"Chain",
+		"Wretched",
+		"Twisted",
+		"Black",
+		"Evil",
+		"Torturous",
+		"Agonizing",
+		"Horrible",
+		"Painful",
+		"Cursed",
+		"Acidic",
+		"Bloody",
+		"Savage"
+	],
+	"void-wepAdj":[
+		"Annihilating",
+		"Breaking",
+		"Sundering",
+		"Shadow",
+		"Black Energy",
+		"Obliterating",
+		"Abyssal",
+		"Perpetual",
+		"Infinite"
+	],
+	"fear-wepAdj":[
+		"Terrifying",
+		"Routing",
+		"Screaming",
+		"Tyrant",
+		"Dread",
+		"Horrific",
+		"Dire"
+	],
+
+	"pain-wepAdj":[
+		"Screaming",
+		"Wailing",
+		"Mad",
+		"Keening",
+		"Shrieking",
+		"Sobbing",
+		"Agonizing",
+		"Torturous",
+		"Horrible",
+		"Painful",
+		"Cursed",
+		"Acidic",
+		"Bloody",
+	],
+}

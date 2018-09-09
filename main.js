@@ -2,12 +2,25 @@ btn_generate.onclick=generate;
 function getId(str){
   return document.getElementById(str)
 }
-
+/*
+Apparently this makes Mobile Phone Battries cry.
 function randum(_array){
 	var nx = new Uint8ClampedArray(1)
 	window.crypto.getRandomValues(nx)
 	var ni = Math.floor(((nx[0])/256) * _array.length)
 	return _array[ni]
+}
+function randumInt(max){
+	var nx = new Uint8ClampedArray(1)
+	window.crypto.getRandomValues(nx)
+	return Math.floor(((nx[0])/255) * max)
+}*/
+function randum(_array){
+	var ni = Math.floor(Math.random() * _array.length)
+	return _array[ni]
+}
+function randumInt(max){
+	return Math.floor(Math.random() * max)
 }
 
 function generate(){
@@ -15,18 +28,42 @@ function generate(){
 	var namex = donames()
 	var name = namex[0]
 	var gender = namex[1].toLowerCase()
-	var _titletypeR= randum(titletypes)
-	var _titletype = _titletypeR.split(":")[0] //title type raw
-	var _title = ""
-	if (_titletypeR.split(":")[1]=="g") {
-		_title= randum(titles[_titletype])[gender]
-	}else{
-		_title= randum(titles[_titletype])
-	};
-	
+	var _titlemaintypeR= randum(titletypes.main)
+	var _titlemaintype = _titlemaintypeR //title type raw
+	var _titlemain = ""
+	_titlemain = randum(titles[_titlemaintype])
 	var _realmtype= randum(realmtypes)
 	var _realm = randum(realms[_realmtype])
-	var outtext =`${randum(adj)}${_title} of ${_realm}`
+	var genAdj=""
+	var power = _titlemain.power
+	if(randumInt(10)<4){
+		genAdj = randum(titleAdj)
+	}
+	var outtext =`${genAdj}${_titlemain["o"] || _titlemain[gender]} of ${_realm}`
+	var antistall=0
+	var realmlist = realms[_realmtype].slice(0)
+	while (power>1){
+		var titleNextType = randum(titletypes.secondary)
+		var titleNext = randum(titles[titleNextType])
+		var i = randumInt(realmlist.length)
+		var realmNext = realmlist[i]
+		realmlist.splice(i,1)
+		var genAdjN=""
+		if(titleNext.power <= power && realmNext!=_realm){
+				if(randumInt(10)<3){
+				genAdjN = randum(titleAdj)
+				}
+				outtext += `, ${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`
+				power -= titleNext.power
+		}else if(antistall>10){
+			break;
+		}else{
+			antistall++
+		}
+	}
+
+
+	
 	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
 	getId("h3_header").innerHTML = `${randum(headertxt)} ${name} ${outtext}`
 	getId("ta_output").scrollTop = getId("ta_output").scrollHeight;
