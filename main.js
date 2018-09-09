@@ -49,13 +49,13 @@ function generate(){
 		var realmNext = realmlist[i]
 		realmlist.splice(i,1)
 		var genAdjN=""
-		if(titleNext.power <= power && realmNext!=_realm){
+		if(titleNext.power <= power && realmNext!=_realm && realmlist.length >1){
 				if(randumInt(10)<3){
 				genAdjN = randum(titleAdj)
 				}
 				outtext += `, ${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`
 				power -= titleNext.power
-		}else if(antistall>10){
+		}else if(antistall>10 || realmlist.length <2){
 			break;
 		}else{
 			antistall++
