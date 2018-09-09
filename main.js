@@ -24,7 +24,6 @@ function randumInt(max){
 }
 
 function generate(){
-	console.log("Generating...")
 	var namex = donames()
 	var name = namex[0]
 	var gender = namex[1].toLowerCase()
