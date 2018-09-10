@@ -54,15 +54,18 @@ function generate(){
 				}
 				outtext += `, ${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`
 				power -= titleNext.power
-		}else if(antistall>10 || realmlist.length <2){
+		}else if(antistall>10 || realmlist.length <1){
 			break;
 		}else{
 			antistall++
 		}
 	}
+	//Weapon
+	var vowelx = new RegExp('[aeiouAEIOU]')
+	var genweapon =  `${randum(meleewepdefs.origin)} ${randum(meleewepdefs["generic-subtype"])} ${randum(meleewepdefs.wepType)} of ${randum(realms[_realmtype])}`
+	outtext += `\n	${(gender=='m')?"He":"She"} ${p("wields|holds|brandishes|uses|possesses")} ${(vowelx.test(genweapon[0]))?"an":"a"} ${genweapon}.`
 
-
-	
+	//Output
 	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
 	getId("h3_header").innerHTML = `${randum(headertxt)} ${name} ${outtext}`
 	getId("ta_output").scrollTop = getId("ta_output").scrollHeight;
@@ -72,6 +75,15 @@ function gentitle(_type,realm){
 	var txt = ""
 	txt  =`${titles[_type][randum(titles[_type])]} of ${realms[realm][randum(realms[realm])]}`
 	return txt
+}
+
+
+function pick(){
+	return arguments[randumInt(arguments.length)]
+}
+function p(string){
+	var a = string.split("|")
+	return a[randumInt(a.length)]
 }
 
 function donames(){

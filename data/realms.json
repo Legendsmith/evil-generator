@@ -71,7 +71,8 @@ var realms= {
         "Decimation",
         "Carnage",
         "Invasions",
-        "Savagery"
+        "Savagery",
+        "Bloodlust"
     ],
     "void":[
         "Obliteration",
@@ -96,14 +97,47 @@ var realms= {
         "Nightmares"
     ],
     "pain":[
-    "Torment",
-    "Pain",
-    "Anguish",
-    "Affliction",
-    "Thorns",
-    "Torture",
-    "Agony",
-    "Cruelty"
+        "Torment",
+        "Pain",
+        "Anguish",
+        "Affliction",
+        "Thorns",
+        "Torture",
+        "Agony",
+        "Cruelty"
+    ],
+    "lust":[
+        "Lust",
+        "Thirst",
+        "Carnality",
+        "Fornication",
+        "Seduction",
+        "Eroticism",
+        "Passion",
+        "Libidinosity",
+        "Dark Romance",
+        "Ardor",
+        "Temptations",
+        "Decadence",
+        "Adultery",
+        "Perversion",
+        "Depravity",
+        "Desirousness",
+        "Salciousness"
+
+    ],
+    "greed":[
+        "Avarice",
+        "Greed",
+        "Ursury",
+        "Narcissism",
+        "Acquisitiveness",
+        "Covetousness",
+        "Profit",
+        "Ill Gained",
+        "Ambition",
+        "Vindictiveness",
+        "Materialism",
     ]
 }
 
