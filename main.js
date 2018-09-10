@@ -62,7 +62,7 @@ function generate(){
 	}
 	//Weapon
 	var vowelx = new RegExp('[aeiouAEIOU]')
-	var genweapon =  `${randum(meleewepdefs.origin)} ${randum(meleewepdefs["generic-subtype"])} ${randum(meleewepdefs.wepType)} of ${randum(realms[_realmtype])}`
+	var genweapon =  `${(randumInt(4)>2)?randum(meleewepdefs[_realmtype+("_wepAdj")])+" ":""}${randum(meleewepdefs.origin)} ${randum(meleewepdefs["generic_subtype"])} ${randum(meleewepdefs.wepType)} of ${randum(realms[_realmtype])}`
 	outtext += `\n	${(gender=='m')?"He":"She"} ${p("wields|holds|brandishes|uses|possesses")} ${(vowelx.test(genweapon[0]))?"an":"a"} ${genweapon}.`
 
 	//Output

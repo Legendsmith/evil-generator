@@ -16,14 +16,13 @@ var meleewepdefs={
 		"Stolen",
 		"Infernal"
 	],
-	"generic-subtype":[
+	"generic_subtype":[
 		"Chainsaw",
 		"Shadow",
 		"Steel-Eating",
 		"Armor Piercing",
 		"Flame",
 		"Quicksilver",
-		"Gold",
 		"Blacksteel",
 		"Bronze",
 		"Magic",
@@ -62,6 +61,129 @@ var meleewepdefs={
 		"Bardiche",
 		"Flail",
 		"Broadaxe"
-	]
+	],
+	"7sins_wepAdj":[
+			"Prime",
+			"Ancient"
+	],
+	"nurglite_wepAdj":[
+		"Rotting",
+		"Ever-Rusting",
+		"Blighted",
+		"Plague-Ridden",
+		"Pock-Marked",
+		"Diseased",
+		"Essence Tainting",
+		"Blood Curdling",
+		"Corrupting",
+		"Pustulent",
+		"Necrotic",
+		"Infectious",
+		"Throbbing",
+		"Festering",
+		"Putrid",
+		"Septic"
+	],
+	
+	"socialsins_wepAdj":[
+		"Screaming",
+		"Wailing",
+		"Babbling",
+		"Mad",
+		"Keening",
+		"Shrieking",
+		"Sobbing",
+		"Malicous",
+		"Silent",
+		"Deceptive",
+		"Spiteful",
+		"Shadow",
+		"Whispering",
+		"Lying",
+		"Twisted",
+		"Silver Spun",
+		"Blinding",
+		"Silencing"
+	],
+	"violence_wepAdj":[
+		"Dark",
+		"Fallen",
+		"Flaming",
+		"Smoking",
+		"Ashen",
+		"Blood",
+		"Chain",
+		"Wretched",
+		"Twisted",
+		"Black",
+		"Evil",
+		"Torturous",
+		"Agonizing",
+		"Horrible",
+		"Painful",
+		"Cursed",
+		"Acidic",
+		"Bloody",
+		"Savage"
+	],
+	"void_wepAdj":[
+		"Vortex",
+		"Chaos",
+		"Dark",
+		"Annihilating",
+		"Breaking",
+		"Sundering",
+		"Shadow",
+		"Black Energy",
+		"Obliterating",
+		"Abyssal",
+		"Perpetual",
+		"Infinite"
+	],
+	"fear_wepAdj":[
+		"Terrifying",
+		"Routing",
+		"Screaming",
+		"Tyrant",
+		"Dread",
+		"Horrific",
+		"Dire"
+	],
+
+	"pain_wepAdj":[
+		"Screaming",
+		"Wailing",
+		"Mad",
+		"Keening",
+		"Shrieking",
+		"Sobbing",
+		"Agonizing",
+		"Torturous",
+		"Horrible",
+		"Painful",
+		"Cursed",
+		"Acidic",
+		"Bloody",
+	],
+	"lust_wepAdj":[
+		"Enchanting",
+		"Glittering",
+		"Whispering",
+		"Shining",
+		"Glowing",
+		"Captivating",
+		"Bewitching",
+		"Enthralling",
+		"Entrancing",
+		"Life-Draining"
+	],
+	"greed_wepAdj":[
+		"Golden",
+		"Midas",
+		"Ornate",
+		"Gem-studded",
+		"Silver Inlayed,"
+
+	],
 }
 //steel eating and stuff instead of "rusting"

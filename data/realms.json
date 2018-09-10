@@ -10,11 +10,8 @@ var realmtypes=[
 
 var realms= {
     "7sins": [
-        "Lust",
         "Gluttony",
-        "Greed",
         "Sloth",
-        "Wrath",
         "Envy",
         "Pride"
   ],
@@ -33,7 +30,7 @@ var realms= {
         "Decomposition",
         "Stagnation",
         "Depravation",
-        "Putrifaction",
+        "Putrefaction",
         "Necrosis",
         "Disease",
         "Ichor"
@@ -55,6 +52,7 @@ var realms= {
         "Contempt"
     ],
     "violence":[
+        "Wrath",
         "Rage",
         "Conquest",
         "Fury",
