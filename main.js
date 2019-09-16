@@ -38,7 +38,7 @@ function generate(){
 	if(randumInt(10)<4){
 		genAdj = randum(titleAdj)
 	}
-	var outtext =`${genAdj}${_titlemain["o"] || _titlemain[gender]} of ${_realm}. ${(gender=='m')?"He":"She"} also holds the titles `
+	var outtext =`${genAdj}${_titlemain["o"] || _titlemain[gender]} of ${_realm}.`
 	var antistall=0
 	var realmlist = realms[_realmtype].slice(0)
 	var titlelist = []
@@ -61,11 +61,16 @@ function generate(){
 			antistall++
 		}
 	}
-	for (var i = 0; i < titlelist.length-1; i++) {
-		
-		outtext+=titlelist[i]+", "
+	if(titlelist[1]==undefined){
+		outtext+=` ${(gender=='m')?"He":"She"} also holds the title ${titlelist[0]}.`
+	}else{
+		outtext+=` ${(gender=='m')?"He":"She"} also holds the titles `
+		for (var i = 0; i < titlelist.length-1; i++) {
+			
+			outtext+=titlelist[i]+", "
+		}
+		outtext+=`and ${titlelist[titlelist.length-1]}.`
 	}
-	outtext+=`and ${titlelist[titlelist.length-1]}.`
 
 	//Weapon
 	var vowelx = new RegExp('[aeiouAEIOU]')
