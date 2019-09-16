@@ -38,9 +38,10 @@ function generate(){
 	if(randumInt(10)<4){
 		genAdj = randum(titleAdj)
 	}
-	var outtext =`${genAdj}${_titlemain["o"] || _titlemain[gender]} of ${_realm}`
+	var outtext =`${genAdj}${_titlemain["o"] || _titlemain[gender]} of ${_realm}. ${(gender=='m')?"He":"She"} also holds the titles `
 	var antistall=0
 	var realmlist = realms[_realmtype].slice(0)
+	var titlelist = []
 	while (power>1){
 		var titleNextType = randum(titletypes.secondary)
 		var titleNext = randum(titles[titleNextType])
@@ -52,7 +53,7 @@ function generate(){
 				if(randumInt(10)<3){
 				genAdjN = randum(titleAdj)
 				}
-				outtext += `, ${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`
+				titlelist.push(`${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`)
 				power -= titleNext.power
 		}else if(antistall>10 || realmlist.length <1){
 			break;
@@ -60,6 +61,12 @@ function generate(){
 			antistall++
 		}
 	}
+	for (var i = 0; i < titlelist.length-1; i++) {
+		
+		outtext+=titlelist[i]+", "
+	}
+	outtext+=`and ${titlelist[titlelist.length-1]}.`
+
 	//Weapon
 	var vowelx = new RegExp('[aeiouAEIOU]')
 	var genweapon =  `${(randumInt(4)>2)?randum(meleewepdefs[_realmtype+("_wepAdj")])+" ":""}${randum(meleewepdefs.origin)} ${randum(meleewepdefs["generic_subtype"])} ${randum(meleewepdefs.wepType)} of ${randum(realms[_realmtype])}`
