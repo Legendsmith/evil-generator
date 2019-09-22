@@ -1,15 +1,5 @@
 //setup
 
-var xmlhttp = new XMLHttpRequest();
-//var domainsData = {}
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    domainsData = JSON.parse(this.responseText);
-    print("Loaded data")
-  }
-};
-xmlhttp.open("GET", "domains.json", true);
-xmlhttp.send(); 
 
 //btn setup
 btn_generate.onclick=generate;
@@ -105,7 +95,7 @@ function generate(){
 	var placeWord= randum(place.place)
 	var nounWord= randum(noun.noun)
 	// power of the location
-	switch (randumInt(4)){//0-3
+	switch (randumInt(6)){//0-5
 		case 0:
 			domaintext=`the ${placeWord} of ${nounWord}`
 		break;
@@ -118,9 +108,15 @@ function generate(){
 		case 3:
 			domaintext= `the ${randum(place.adjective)} ${noun.topleveladj} ${placeWord} of ${randum(domainsData.descriptors[descriptor])} ${nounWord}`
 		break;
+		case 4:
+			domaintext= `the ${placeWord} of ${randum(domainsData.descriptors[descriptor])} ${nounWord}`
+		break;
+		case 5:
+			domaintext= `the ${placeWord} of ${noun.topleveladj} ${nounWord}`
+		break;
 	}
 
-	outtext+=`\nLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
+	outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
 
 	//Output
 	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
