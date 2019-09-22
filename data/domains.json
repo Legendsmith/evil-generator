@@ -1,5 +1,5 @@
 var domainsData = {
-	"domains":["fire","ice","light","darkness","gates","earth","wind","sea","beasts","jungle","desert","blood","death","build"],
+	"domains":["fire","ice","light","darkness","earth","wind","sea","beasts","jungle","desert","blood","death","build"],
 	"metadomains":["infernal","astral","deep","dark","outer","negative","nether","under"],
 	"domain":{
 		"fire":{
@@ -39,7 +39,7 @@ var domainsData = {
 			"topleveladj":"cthonian",
 			"adjective":["rocky","stony","rough","bouldered","cthonian"],
 			"opposite":"wind",
-			"place":["cave,gorge"],
+			"place":["cave","gorge"],
 			"descriptorclass": ["corrupt","dead","movement"]
 		},
 		"wind":{
@@ -87,7 +87,7 @@ var domainsData = {
 			"topleveladj":"wild",
 			"adjective":["bloody","blood-spattered",],
 			"opposite":"death",
-			"place":["battlefield","butchery","slaughterhouse","slaughter-Field"],
+			"place":["battlefield","butcherhouse","slaughterhouse","slaughter-Field"],
 			"descriptorclass":["movement","corrupt"]
 		},
 		"death":{

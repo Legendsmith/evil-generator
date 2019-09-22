@@ -29,7 +29,6 @@ var realms= {
         "Degeneration",
         "Decomposition",
         "Stagnation",
-        "Depravation",
         "Putrefaction",
         "Necrosis",
         "Disease",
@@ -121,7 +120,8 @@ var realms= {
         "Perversion",
         "Depravity",
         "Desirousness",
-        "Salciousness"
+        "Salciousness",
+        "Depravation",
 
     ],
     "greed":[

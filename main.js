@@ -78,9 +78,9 @@ function generate(){
 			antistall++
 		}
 	}
-	if(titlelist[1]==undefined){
+	if(titlelist[0] !=undefined && titlelist[1]==undefined){
 		outtext+=` ${(gender=='m')?"He":"She"} also holds the title ${titlelist[0]}.`
-	}else{
+	}else if(titlelist[1]!=undefined){
 		outtext+=` ${(gender=='m')?"He":"She"} also holds the titles `
 		for (var i = 0; i < titlelist.length-1; i++) {
 			
@@ -99,9 +99,26 @@ function generate(){
 	var domaintext = ""
 	var adjectives= new Array(randumInt(2));
 	//if(maindomain.ofOnly || randumInt(2)>0)
-	var place = randum(domainsData.domain[randum(domainsData.domains)].place)
-	var noun = randum(domainsData.domain[randum(domainsData.domains)].noun)
-	domaintext=`the ${place} of ${noun}`
+	var place = domainsData.domain[randum(domainsData.domains)]
+	var noun = domainsData.domain[randum(domainsData.domains)]
+	var descriptor = randum(place.descriptorclass)
+	var placeWord= randum(place.place)
+	var nounWord= randum(noun.noun)
+	// power of the location
+	switch (randumInt(4)){//0-3
+		case 0:
+			domaintext=`the ${placeWord} of ${nounWord}`
+		break;
+		case 1:
+			domaintext=`the ${randum(place.adjective)} ${placeWord} of ${nounWord}`
+		break;
+		case 2:
+			domaintext=`the ${randum(place.adjective)} ${noun.topleveladj} ${placeWord} of ${nounWord}`
+		break;
+		case 3:
+			domaintext= `the ${randum(place.adjective)} ${noun.topleveladj} ${placeWord} of ${randum(domainsData.descriptors[descriptor])} ${nounWord}`
+		break;
+	}
 
 	outtext+=`\nLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
 

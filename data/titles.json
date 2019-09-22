@@ -66,7 +66,11 @@ var titles= {
 		{"o":"General","power":5},
 		{"o":"Captain","power":1},
 		{"o":"Major","power":2},
-		{"o":"Chief","power":1},
+		{
+			"m":"Chief",
+			"f":"Chieftess",
+			"power":1
+		},
 		{"o":"Brigadier","power":4},
 		{"o":"Colonel","power":3},
 
