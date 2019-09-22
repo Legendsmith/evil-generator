@@ -15,7 +15,7 @@ var domainsData = {
 			"topleveladj":"polar",
 			"adjective":["icy","cold","freezing"],
 			"opposite":"fire",
-			"place":["tundra,glacier"],
+			"place":["tundra","glacier"],
 			"descriptorclass":["movement","corrupt"]
 		},
 		"light":{

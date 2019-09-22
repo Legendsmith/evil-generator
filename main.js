@@ -99,7 +99,8 @@ function generate(){
 	var domaintext = ""
 	var adjectives= new Array(randumInt(2));
 	//if(maindomain.ofOnly || randumInt(2)>0)
-	var place = randum()
+	var place = randum(domainsData.domain[randum(domainsData.domains)].place)
+	var noun = randum(domainsData.domain[randum(domainsData.domains)].noun)
 	domaintext=`the ${place} of ${noun}`
 
 	outtext+=`\nLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
