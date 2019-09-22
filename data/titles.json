@@ -66,7 +66,10 @@ var titles= {
 		{"o":"General","power":5},
 		{"o":"Captain","power":1},
 		{"o":"Major","power":2},
-		{"o":"Chief","power":1}
+		{"o":"Chief","power":1},
+		{"o":"Brigadier","power":4},
+		{"o":"Colonel","power":3},
+
 	],
 	"trade":[
 		{"o":"Magnate","power":5},
@@ -90,7 +93,9 @@ var titles= {
 	],
 	"generic":[
 		{"m":"Father","f":"Mother","power":4},
-		{"m":"Patriarch","f":"Matriarch","power":5}
+		{"m":"Patriarch","f":"Matriarch","power":5},
+		{"m":"Son","f":"Daughter","power":1},
+		{"m":"Brother","f":"Sister","power":1}
 	]
 }
 
@@ -109,12 +114,14 @@ var titleAdj = [
 	"Ab-",
 	"Mero-",
 	"Supra-",
-	"Tri-"
+	"Tri-",
+	"Ultra-",
 ]
 
 var headertxt = [
 "Behold ",
 "Witness ",
 "Gaze upon and Weep at ",
-"Observe the Glory of "
+"Observe the Glory of ",
+"Shield your eyes before "
 ]

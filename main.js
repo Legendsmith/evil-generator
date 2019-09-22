@@ -1,3 +1,17 @@
+//setup
+
+var xmlhttp = new XMLHttpRequest();
+//var domainsData = {}
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    domainsData = JSON.parse(this.responseText);
+    print("Loaded data")
+  }
+};
+xmlhttp.open("GET", "domains.json", true);
+xmlhttp.send(); 
+
+//btn setup
 btn_generate.onclick=generate;
 function getId(str){
   return document.getElementById(str)
@@ -35,6 +49,9 @@ function generate(){
 	var _realm = randum(realms[_realmtype])
 	var genAdj=""
 	var power = _titlemain.power
+	if (power == 1){
+		power=2;
+	};
 	if(randumInt(10)<4){
 		genAdj = randum(titleAdj)
 	}
@@ -71,15 +88,25 @@ function generate(){
 		}
 		outtext+=`and ${titlelist[titlelist.length-1]}.`
 	}
+	var headertext = outtext
 
 	//Weapon
 	var vowelx = new RegExp('[aeiouAEIOU]')
 	var genweapon =  `${(randumInt(4)>2)?randum(meleewepdefs[_realmtype+("_wepAdj")])+" ":""}${randum(meleewepdefs.origin)} ${randum(meleewepdefs["generic_subtype"])} ${randum(meleewepdefs.wepType)} of ${randum(realms[_realmtype])}`
 	outtext += `\n	${(gender=='m')?"He":"She"} ${p("wields|holds|brandishes|uses|possesses")} ${(vowelx.test(genweapon[0]))?"an":"a"} ${genweapon}.`
+	//domain
+	var maindomain = randum(domainsData.domains)
+	var domaintext = ""
+	var adjectives= new Array(randumInt(2));
+	//if(maindomain.ofOnly || randumInt(2)>0)
+	var place = randum()
+	domaintext=`the ${place} of ${noun}`
+
+	outtext+=`\nLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
 
 	//Output
 	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
-	getId("h3_header").innerHTML = `${randum(headertxt)} ${name} ${outtext}`
+	getId("h3_header").innerHTML = `${randum(headertxt)} ${name} ${headertext}`
 	getId("ta_output").scrollTop = getId("ta_output").scrollHeight;
 }
 
@@ -96,6 +123,15 @@ function pick(){
 function p(string){
 	var a = string.split("|")
 	return a[randumInt(a.length)]
+}
+function titleCase(str){ // https://reactgo.com/how-to-titlecase-javascript/
+   str = str.toLowerCase().split(' ');
+   let final = [ ];
+    for(let  word of str){
+      final.push(word.charAt(0).toUpperCase()+ word.slice(1));
+    }
+  return final.join(' ')
+
 }
 
 function donames(){
