@@ -207,7 +207,7 @@ function generate(){
 		break;
 	}
 
-	outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is the ${titleCase(domaintext)}.`
+	outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is ${titleCase(domaintext)}.`
 
 	//Output
 	getId("ta_output").value = getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
@@ -242,7 +242,7 @@ function titleCase(str){ // https://reactgo.com/how-to-titlecase-javascript/
 function donames(){
 	var namelist = getId("ta_nameput")
 	var name ="the"
-	var gender = "m"
+	var gender = p("m|f");
 	if (namelist.value != ""){
 		var namevalue =namelist.value.replace("	","\n")
 		var namearray = namevalue.split("\n")
