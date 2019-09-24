@@ -1,0 +1,32 @@
+{
+	"cunning":{
+		"base":"provide knowledge of"
+
+	},
+	"brutal":{
+		"base":"Smite"
+	},
+	"narc":{
+		"Base":"provide immunity to"
+	},
+	"demands":{
+		"self":[
+			{"item":"soul","name":["their soul"],"power":10},
+			{"item":"fleshminor","name":["give a finger","give a toe","give an ear","give their hair"],"power":2},
+			{"item":"fleshmajor","name":["sacrifice a hand","sacrifice blood"],"power":4},
+			{"item":"fleshgreat","name":["lose an arm","lose a leg"],"power":6}
+		],
+		"cult":[
+			{"item":"devotion","name":["devote themselves","swear fealty"],"power":6},
+			{"item":"mark","name":["wear a brand on their body"],"power":2},
+			{"item":"kill","name":["slay an enemy in their name"],"power":4},
+			{"item":"mark","name":["sacrifice a pure victim in their name"],"power":8}
+		],
+		"sacrifice":[
+			{"item":"sacrificeminor","name":"regularly sacrifice a small animal", "power":2},
+			{"item":"sacrificeminor","name":"regularly sacrifice an appropriately prepared sheep or goat", "power":4},
+			{"item":"sacrificeminor","name":"regularly sacrifice an appropriately prepared cow, oxen, or horse", "power":6}
+		]
+	}
+	
+}

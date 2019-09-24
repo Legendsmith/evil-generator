@@ -1,4 +1,4 @@
-var meleewepdefs={	
+{
 	"origin":[
 		"Satanic",
 		"Abyssal",
@@ -25,7 +25,7 @@ var meleewepdefs={
 		"Quicksilver",
 		"Blacksteel",
 		"Bronze",
-		"Magic",
+		"Magic"
 	],
 	"wepType":[
 		"Axe",
@@ -66,7 +66,7 @@ var meleewepdefs={
 			"Prime",
 			"Ancient"
 	],
-	"nurglite_wepAdj":[
+	"decay_wepAdj":[
 		"Rotting",
 		"Ever-Rusting",
 		"Blighted",
@@ -163,7 +163,7 @@ var meleewepdefs={
 		"Painful",
 		"Cursed",
 		"Acidic",
-		"Bloody",
+		"Bloody"
 	],
 	"lust_wepAdj":[
 		"Enchanting",
@@ -182,8 +182,6 @@ var meleewepdefs={
 		"Midas",
 		"Ornate",
 		"Gem-studded",
-		"Silver Inlayed,"
-
-	],
+		"Silver Inlayed"
+	]
 }
-//steel eating and stuff instead of "rusting"

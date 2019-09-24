@@ -1,131 +1,131 @@
-var titletypes={
-	"main":["royal","noble","generic"],
-	"secondary":["military","trade","scholarly","generic"]
-}
-var titles= {
-  "royal": [
-    {
-      "m": "King",
-      "f": "Queen",
-      "power": 10
-    },
-    {
-      "m": "Tzar",
-      "f": "Tsarina",
-      "power": 12
-    },
-    {
-      "m": "Emperor",
-      "f": "Emperess",
-      "power": 14
-    },
-    {
-      "m": "Khan",
-      "f": "Khanum",
-      "power": 11
-    },
-    {
-      "m": "Devaraja",
-      "f": "Mahadevi",
-      "power": 15
-    },
-    {
-      "m": "Despot",
-      "f": "Despot",
-      "power": 10
-    },
-    {
-      "m": "Dictator",
-      "f": "Dictator",
-      "power": 11
-    },
-    {
-      "m": "Imperator",
-      "f": "Imperatrix",
-      "power": 14
-    },
-    {
-      "m": "Tyrant",
-      "f": "Tyrant",
-      "power": 12
-    }
-  ],
-	"noble":[
-	    {"m": "Lord","f": "Lady","power": 8},
-		{"m":"Prince","f":"Princess","power":9},
-		{"m":"Duke","f":"Duchess","power":8},
-		{"m":"Marquess","f":"Marchioness","power":7},
-		{"m":"Earl","f":"Countess","power":6},
-		{"m":"Count","f":"Countess","power":5},
-		{"m":"Viscount","f":"Viscountess","power":4},
-		{"m":"Baron","f":"Baroness","power":3},
-		{"m":"Knight","f":"Dame","power":2}
+{
+	"titletypes":{
+		"main":["royal","noble","generic"],
+		"secondary":["military","trade","scholarly","generic"]
+	},
+	"titles":{
+	  "royal": [
+	    {
+	      "m": "King",
+	      "f": "Queen",
+	      "power": 10
+	    },
+	    {
+	      "m": "Tzar",
+	      "f": "Tsarina",
+	      "power": 12
+	    },
+	    {
+	      "m": "Emperor",
+	      "f": "Emperess",
+	      "power": 14
+	    },
+	    {
+	      "m": "Khan",
+	      "f": "Khanum",
+	      "power": 11
+	    },
+	    {
+	      "m": "Devaraja",
+	      "f": "Mahadevi",
+	      "power": 15
+	    },
+	    {
+	      "m": "Despot",
+	      "f": "Despot",
+	      "power": 10
+	    },
+	    {
+	      "m": "Dictator",
+	      "f": "Dictator",
+	      "power": 11
+	    },
+	    {
+	      "m": "Imperator",
+	      "f": "Imperatrix",
+	      "power": 14
+	    },
+	    {
+	      "m": "Tyrant",
+	      "f": "Tyrant",
+	      "power": 12
+	    }
+	  ],
+		"noble":[
+		    {"m": "Lord","f": "Lady","power": 8},
+			{"m":"Prince","f":"Princess","power":9},
+			{"m":"Duke","f":"Duchess","power":8},
+			{"m":"Marquess","f":"Marchioness","power":7},
+			{"m":"Earl","f":"Countess","power":6},
+			{"m":"Count","f":"Countess","power":5},
+			{"m":"Viscount","f":"Viscountess","power":4},
+			{"m":"Baron","f":"Baroness","power":3},
+			{"m":"Knight","f":"Dame","power":2}
+		],
+		"military":[
+			{"o":"Commander","power":3},
+			{"o":"General","power":5},
+			{"o":"Captain","power":1},
+			{"o":"Major","power":2},
+			{
+				"m":"Chief",
+				"f":"Chieftess",
+				"power":1
+			},
+			{"o":"Brigadier","power":4},
+			{"o":"Colonel","power":3}
+		],
+		"trade":[
+			{"o":"Magnate","power":5},
+			{"o":"Viceroy","power":5},
+			{"o":"Dealer","power":1},
+			{"o":"Merchant","power":3},
+			{"o":"Broker","power":2},
+			{"o":"Peddler","power":1},
+			{"o":"Banker","power":4},
+			{"o":"Exchequer","power":4}
+		],
+		"scholarly":[
+			{"m":"Poet","f":"Poetess","power":3},
+			{"m":"Composer","f":"Composer","power":3},
+			{"m":"Scrivener","f":"Scrivener","power":3},
+			{"m":"Invoker","f":"Invoker","power":5},
+			{"m":"Elder","f":"Elder","power":4},
+			{"m":"Rector","f":"Rector","power":5},
+			{"m":"Adept","f":"Adept","power":1},
+			{"m":"Teacher","f":"Teacher","power":2}
+		],
+		"generic":[
+			{"m":"Father","f":"Mother","power":4},
+			{"m":"Patriarch","f":"Matriarch","power":5},
+			{"m":"Son","f":"Daughter","power":1},
+			{"m":"Brother","f":"Sister","power":1}
+		]
+	},
+	
+	"titleAdj":[
+		"Grand ",
+		"Arch-",
+		"High ",
+		"Dread ",
+		"Ur-",
+		"Wicked ",
+		"Dark ",
+		"Demon-",
+		"Ancient ",
+		"Deadly ",
+		"Black ",
+		"Ab-",
+		"Mero-",
+		"Supra-",
+		"Tri-",
+		"Ultra-"
 	],
-	"military":[
-		{"o":"Commander","power":3},
-		{"o":"General","power":5},
-		{"o":"Captain","power":1},
-		{"o":"Major","power":2},
-		{
-			"m":"Chief",
-			"f":"Chieftess",
-			"power":1
-		},
-		{"o":"Brigadier","power":4},
-		{"o":"Colonel","power":3},
-
-	],
-	"trade":[
-		{"o":"Magnate","power":5},
-		{"o":"Viceroy","power":5},
-		{"o":"Dealer","power":1},
-		{"o":"Merchant","power":3},
-		{"o":"Broker","power":2},
-		{"o":"Peddler","power":1},
-		{"o":"Banker","power":4},
-		{"o":"Exchequer","power":4}
-	],
-	"scholarly":[
-		{"m":"Poet","f":"Poetess","power":3},
-		{"m":"Composer","f":"Composer","power":3},
-		{"m":"Scrivener","f":"Scrivener","power":3},
-		{"m":"Invoker","f":"Invoker","power":5},
-		{"m":"Elder","f":"Elder","power":4},
-		{"m":"Rector","f":"Rector","power":5},
-		{"m":"Adept","f":"Adept","power":1},
-		{"m":"Teacher","f":"Teacher","power":2}
-	],
-	"generic":[
-		{"m":"Father","f":"Mother","power":4},
-		{"m":"Patriarch","f":"Matriarch","power":5},
-		{"m":"Son","f":"Daughter","power":1},
-		{"m":"Brother","f":"Sister","power":1}
+	"headertxt":[
+	"Behold ",
+	"Witness ",
+	"Gaze upon and Weep at ",
+	"Observe the Glory of ",
+	"Shield your eyes before "
 	]
 }
-
-var titleAdj = [
-	"Grand ",
-	"Arch-",
-	"High ",
-	"Dread ",
-	"Ur-",
-	"Wicked ",
-	"Dark ",
-	"Demon-",
-	"Ancient ",
-	"Deadly ",
-	"Black ",
-	"Ab-",
-	"Mero-",
-	"Supra-",
-	"Tri-",
-	"Ultra-",
-]
-
-var headertxt = [
-"Behold ",
-"Witness ",
-"Gaze upon and Weep at ",
-"Observe the Glory of ",
-"Shield your eyes before "
-]

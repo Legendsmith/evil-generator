@@ -1,5 +1,5 @@
-var domainsData = {
-	"domains":["fire","ice","light","darkness","earth","wind","sea","beasts","jungle","desert","blood","death","build"],
+{
+	"domains":["fire","ice","light","darkness","earth","wind","sea","beasts","elder","jungle","desert","blood","death","build"],
 	"metadomains":["infernal","astral","deep","dark","outer","negative","nether","under"],
 	"domain":{
 		"fire":{
@@ -62,12 +62,20 @@ var domainsData = {
 			"noun":["beasts"],
 			"topleveladj":"wild",
 			"adjective":["beastial","savage"],
-			"opposite":"none",
+			"opposite":"elder",
 			"place":["wildland"],
 			"descriptorclass":["corrupt","dead"]
 		},
+		"elder":{
+			"noun":["Ruin"],
+			"topleveladj":"Elder",
+			"adjective":["elder","ancient","outer"],
+			"opposite":"beasts",
+			"place":["old-Lands"],
+			"descriptorclass":["corrupt","dead","purge","movement"]
+		},
 		"jungle":{
-			"noun":["shatterwood",],
+			"noun":["shatterwood","death-vines","choke-root","mandrakes"],
 			"topleveladj":"wild",
 			"adjective":["overgrown","wild"],
 			"opposite":"desert",
@@ -85,7 +93,7 @@ var domainsData = {
 		"blood":{
 			"noun":["blood","gore"],
 			"topleveladj":"wild",
-			"adjective":["bloody","blood-spattered",],
+			"adjective":["bloody","blood-spattered"],
 			"opposite":"death",
 			"place":["battlefield","butcherhouse","slaughterhouse","slaughter-Field"],
 			"descriptorclass":["movement","corrupt"]
@@ -96,10 +104,10 @@ var domainsData = {
 			"adjective":["dead","fatal","mortal"],
 			"opposite":"none",
 			"place":["graveyard","necropolis"],
-			"descriptorclass":["dead","corrupt"],
+			"descriptorclass":["dead","corrupt"]
 		},
 		"build":{
-			"noun":["ruin"],
+			"noun":["roads"],
 			"topleveladj":"under",
 			"adjective":["crumbling"],
 			"opposite":"none",
@@ -114,5 +122,5 @@ var domainsData = {
 		"corrupt":["blighted","corrupt","tainted","profane","defiled"],
 		"dead":["ignoble","bleak","hopeless","grim","dread"],
 		"purge":["soul-blasted","purged","scoured","shattered","broken"]
-	},
+	}
 }
