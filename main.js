@@ -183,7 +183,8 @@ function generate(){
 	var place = data.domainsData.domain[randum(data.domainsData.domains)]
 	var noun = data.domainsData.domain[randum(data.domainsData.domains)]
 	var descriptor = randum(place.descriptorclass)
-	var placeWord= randum(place.place)
+	let placearray = place.place.concat(data.domainsData.neutraldomains)
+	var placeWord= randum(placearray)
 	var nounWord= randum(noun.noun)
 	// power of the location
 	switch (randumInt(6)){//0-5
