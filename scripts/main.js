@@ -1,8 +1,9 @@
-define(function (require){
+define(['./domReady','./utils','./basicgen','./data'],function (doc){
 	//require
 	var data = require('./data')
 	var basicgen = require('./basicgen')
 	var utils = require('./utils')
+	var domReady = require('./domReady')
 	//require
 	//tabs
 	function openPage(pageName, elmnt) {
@@ -28,7 +29,13 @@ define(function (require){
 	document.getElementById("defaultOpen").click(); 
 	//////////////////
 	//Global functions, used ubiquitously.
-	utils.getId('btn_generate').onClick = basicgen.generate;
+
+	domReady(function(){
+		document.getElementById('btn_generate').onClick = function(){
+			console.log("generating")
+			basicgen.generate()
+		}
+	});
 
 
 });
