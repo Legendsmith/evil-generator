@@ -1,3 +1,4 @@
+"use strict";
 
 class actor{
 	constructor(name,title){
@@ -99,7 +100,8 @@ class ActorFactory {
 		);
 	}
 }
-function setAbmbition(){
+
+function getAmbition(){
 	//other title
 	//build location
 	//get weapon
