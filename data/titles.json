@@ -1,7 +1,8 @@
 {
 	"titletypes":{
 		"main":["royal","noble","generic"],
-		"secondary":["military","trade","scholarly","generic"]
+		"secondary":["military","trade","scholarly","generic"],
+		"all":["royal","noble","military","trade","scholarly","generic"]
 	},
 	"titles":{
 	  "royal": [
@@ -13,7 +14,7 @@
 	    {
 	      "m": "Tzar",
 	      "f": "Tsarina",
-	      "power": 12
+	      "power": 13
 	    },
 	    {
 	      "m": "Emperor",
@@ -38,7 +39,7 @@
 	    {
 	      "m": "Dictator",
 	      "f": "Dictator",
-	      "power": 11
+	      "power": 12
 	    },
 	    {
 	      "m": "Imperator",
@@ -90,7 +91,6 @@
 			{"m":"Composer","f":"Composer","power":3},
 			{"m":"Scrivener","f":"Scrivener","power":3},
 			{"m":"Invoker","f":"Invoker","power":5},
-			{"m":"Elder","f":"Elder","power":4},
 			{"m":"Rector","f":"Rector","power":5},
 			{"m":"Adept","f":"Adept","power":1},
 			{"m":"Teacher","f":"Teacher","power":2}
@@ -98,6 +98,7 @@
 		"generic":[
 			{"m":"Father","f":"Mother","power":4},
 			{"m":"Patriarch","f":"Matriarch","power":5},
+			{"m":"Elder","f":"Elder","power":4},
 			{"m":"Son","f":"Daughter","power":1},
 			{"m":"Brother","f":"Sister","power":1}
 		]
@@ -118,8 +119,29 @@
 		"Ab-",
 		"Mero-",
 		"Supra-",
+		"Sub-",
 		"Tri-",
 		"Ultra-"
+	],
+	"titleAdjPwr":[
+		{"name":"Grand ","power":3},
+		{"name":"Arch-","power":3},
+		{"name":"High ","power":2},
+		{"name":"Dread ","power":1},
+		{"name":"Ur-","power":1},
+		{"name":"Wicked ","power":1},
+		{"name":"Dark ","power":1},
+		{"name":"Demon-","power":1},
+		{"name":"Ancient ","power":5},
+		{"name":"Deadly ","power":1},
+		{"name":"Black ","power":1},
+		{"name":"Ab-","power":-2},
+		{"name":"Mero-","power":-2},
+		{"name":"Supra-","power":2},
+		{"name":"Sub-","power":-1},
+		{"name":"Tri-","power":2},
+		{"name":"Ultra-","power":4},
+		{"name":"Omega-","power":4}
 	],
 	"headertxt":[
 	"Behold ",
