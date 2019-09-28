@@ -74,7 +74,7 @@ define(["./data","./utils"],function(data,utils) {
 		var headertext = outtext
 	
 		//Weapon
-		var vowelx = new RegExutils.p('[aeiouAEIOU]')
+		var vowelx = new RegExp('[aeiouAEIOU]')
 		var genweapon =  `${(utils.randumInt(4)>2)?utils.randum(data.weaponsData[_realmtype+("_wepAdj")])+" ":""}${utils.randum(data.weaponsData.origin)} ${utils.randum(data.weaponsData["generic_subtype"])} ${utils.randum(data.weaponsData.wepType)} of ${utils.randum(data.realmData.realms[_realmtype])}`
 		outtext += `\n	${(gender=='m')?"He":"She"} ${utils.p("wields|holds|brandishes|uses|possesses")} ${(vowelx.test(genweapon[0]))?"an":"a"} ${genweapon}.`
 		//domain
@@ -109,7 +109,7 @@ define(["./data","./utils"],function(data,utils) {
 			break;
 		}
 	
-		outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is ${titleCase(domaintext)}.`
+		outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is ${utils.titleCase(domaintext)}.`
 	
 		//Output
 		utils.getId("ta_output").value = utils.getId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"

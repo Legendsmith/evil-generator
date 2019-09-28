@@ -31,10 +31,7 @@ define(['./domReady','./utils','./basicgen','./data'],function (doc){
 	//Global functions, used ubiquitously.
 
 	domReady(function(){
-		document.getElementById('btn_generate').onClick = function(){
-			console.log("generating")
-			basicgen.generate()
-		}
+		document.querySelector('#btn_generate').addEventListener('click', basicgen.generate)
 	});
 
 
