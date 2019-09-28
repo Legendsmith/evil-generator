@@ -8,7 +8,7 @@ define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data'], f
 		}
 	
 		// Show the specific tab content
-		document.getElementById(pageName).style.display = "block";
+		domUtil.byId(pageName).style.display = "block";
 		tablinks = document.getElementsByClassName("tablink");
 		for (let i = 0; i < tablinks.length; i++) {
 			tablinks[i].style.background = "";
@@ -18,7 +18,7 @@ define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data'], f
 	window.openPage = openPage
 	
 	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click(); 
+	domUtil.byId("defaultOpen").click(); 
 	//////////////////
 	//Global functions, used ubiquitously.
 
