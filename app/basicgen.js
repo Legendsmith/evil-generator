@@ -1,6 +1,6 @@
-define(["./data","./utils"],function(data,utils) {
-	var data = require('./data')
-	var utils = require('./utils')
+define(["app/data","app/utils"],function(data,utils) {
+	var data = require('app/data')
+	var utils = require('app/utils')
 	function donames(){
 		var namelist = utils.getId("ta_nameput")
 		var name ="the"
@@ -20,7 +20,6 @@ define(["./data","./utils"],function(data,utils) {
 		return [name,gender]
 	}
 	function generate(){
-		console.log("generating")
 		var namex = donames()
 		var name = namex[0]
 		var gender = namex[1].toLowerCase()

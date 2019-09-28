@@ -1,9 +1,9 @@
-define(['./domReady','./utils','./basicgen','./data'],function (doc){
+define(['lib/domReady','app/utils','app/basicgen','app/data'],function (doc){
 	//require
-	var data = require('./data')
-	var basicgen = require('./basicgen')
-	var utils = require('./utils')
-	var domReady = require('./domReady')
+	var data = require('app/data')
+	var basicgen = require('app/basicgen')
+	var utils = require('app/utils')
+	var domReady = require('lib/domReady')
 	//require
 	//tabs
 	function openPage(pageName, elmnt) {
