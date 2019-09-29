@@ -16,7 +16,7 @@ define(function(){
 					
 				}
 			}
-			realmshttp.open("GET","data/realms.json",true);
+			realmshttp.open("GET","/data/gen/evil/realms.json",true);
 			realmshttp.send();
 		}
 		loaddomains(callback){
@@ -27,7 +27,7 @@ define(function(){
 					
 				}
 			}
-			domainshttp.open("GET","data/domains.json",true);
+			domainshttp.open("GET","/data/gen/evil/domains.json",true);
 			domainshttp.send();
 		}
 		loadpowers(callback){
@@ -38,7 +38,7 @@ define(function(){
 			    
 			  }
 			};
-			xmlhttp.open("GET", "data/powers.json", true);
+			xmlhttp.open("GET", "/data/gen/evil/powers.json", true);
 			xmlhttp.send(); 
 		}
 		loadweapons(callback){
@@ -49,7 +49,7 @@ define(function(){
 			    
 			  }
 			};
-			xmlhttp.open("GET", "data/weapons.json", true);
+			xmlhttp.open("GET", "/data/gen/evil/weapons.json", true);
 			xmlhttp.send(); 
 		}
 		loadtitles(callback){
@@ -60,7 +60,7 @@ define(function(){
 			    
 			  }
 			};
-			xmlhttp.open("GET", "data/titles.json", true);
+			xmlhttp.open("GET", "/data/gen/evil/titles.json", true);
 			xmlhttp.send(); 
 		}
 		load(){
