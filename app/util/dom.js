@@ -13,6 +13,10 @@ define(function(){
 	function pick(){
 		return arguments[randomInt(arguments.length)]
 	}
+	// return true if in range, otherwise false
+	function inRange(x, min, max) {
+	    return ((x-min)*(x-max) <= 0);
+	}
 
 // -- Should be moved into another file.
 	//used in string manipulation.

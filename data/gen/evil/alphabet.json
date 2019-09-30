@@ -1,7 +1,6 @@
 {
 	"V":["a","e","i","o","u"],
-	"C":["q","w","r","t","y","p","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"],
-	"D":["ch","sk","th"],
+	"C":["q","w","r","t","y","p","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m","th","ch"],
 	"S":["Chr","Zh","St","Thr","Rh","Wh","Sw","Ph","Str"],
-	"patterns":["SVCCV","CVCCVC","CVCVVC","SVDVVCC","SVCDVCCV","VCDVV","VVCVCCVCV","CVCDVC"]
+	"patterns":["SVCCV","CVCCVC","CVCVVC","SVCVVCC","SVCCVCCV","VCCVV","VVCVCCVCV","CVCCVC"]
 }

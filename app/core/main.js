@@ -1,4 +1,4 @@
-define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data'], function(domReady, domUtil, evilGenBasic, evilGenData) {
+define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data','gen/evil/titles'], function(domReady, domUtil, evilGenBasic, evilGenData,Title) {
 	function openPage(pageName, element) {
 		// Hide all elements with class="tabcontent" by default
 		let i, tabcontent, tablinks;
@@ -21,6 +21,8 @@ define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data'], f
 	domUtil.byId("defaultOpen").click(); 
 	//////////////////
 	//Global functions, used ubiquitously.
+	titles = new Title();
+	console.log(Title)
 
 	domReady(function(){
 		document.querySelector('#btn_generate').addEventListener('click', evilGenBasic.generate)
