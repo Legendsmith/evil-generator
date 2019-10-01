@@ -63,9 +63,23 @@ define(function(){
 			xmlhttp.open("GET", "/data/gen/evil/titles.json", true);
 			xmlhttp.send(); 
 		}
+		buildTitleList(){
+			let self = this;
+			this.titlesData.bypower=new Array(self.titlesData.maxpower+1);
+			for (var i = self.titlesData.maxpower+1; i >= 0; i--) {
+				self.titlesData.bypower[i]=[]
+			}
+			for (var i = self.titlesData.titletypes.all.length - 1; i >= 0; i--) {
+				var currenttype = self.titlesData.titletypes.all[i]
+				for (var xi = self.titlesData.titles[currenttype].length - 1; xi >= 0; xi--) {
+					self.titlesData.titles[currenttype][xi].type=currenttype
+					self.titlesData.bypower[self.titlesData.titles[currenttype][xi].power].push(self.titlesData.titles[currenttype][xi]);
+				}
+			}
+		}
 		load(){
 			console.log("Begin loading")
-			self = this
+			let self = this;
 			this.loadrealms(function(response){
 				self.realmData=response;
 				console.log("loaded realms")
@@ -80,6 +94,7 @@ define(function(){
 			})
 			this.loadtitles(function(response){
 				self.titlesData=response;
+				self.buildTitleList()
 				console.log("loaded titles")
 			})
 			this.loadweapons(function(response){

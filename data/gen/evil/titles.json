@@ -4,7 +4,10 @@
 		"secondary":["military","trade","scholarly","generic"],
 		"all":["royal","noble","military","trade","scholarly","generic"]
 	},
+	"maxpower":15,
+	"variance":5,
 	"titles":{
+
 	  "royal": [
 	    {
 	      "m": "King",
@@ -140,6 +143,7 @@
 		{"name":"Supra-","power":2},
 		{"name":"Sub-","power":-1},
 		{"name":"Tri-","power":2},
+		{"name":"Super ","power":2},
 		{"name":"Ultra-","power":4},
 		{"name":"Omega-","power":4}
 	],
