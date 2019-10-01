@@ -25,22 +25,10 @@ define(function(){
 		return a[randomInt(a.length)]
 	}
 
-// -- Should be moved into another file.
-	//Title Case function.
-	function titleCase(str){ // https://reactgo.com/how-to-titlecase-javascript/
-		str = str.toLowerCase().split(' ');
-		let final = [ ];
-		for(let	word of str){
-			final.push(word.charAt(0).toUpperCase()+ word.slice(1));
-		}
-		return final.join(' ')
-	}
-
 	return{
 		byId: byId,
 		pick: pick,
 		p: p,
-		titleCase: titleCase,
 		random: random,
 		randomInt: randomInt
 	}

@@ -20,7 +20,10 @@ define(["gen/evil/data","util/dom"],function(data, domUtil) {
 		return [name,gender]
 	}
 	function generate() {
-		console.log("generating")
+		console.log("generating");
+
+		let data = window.GeneratorFoundry.EvilGenerator.data;
+
 		let namex = doNames()
 		let name = namex[0]
 		let gender = namex[1].toLowerCase()
@@ -109,7 +112,7 @@ define(["gen/evil/data","util/dom"],function(data, domUtil) {
 			break;
 		}
 	
-		outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is ${domUtil.titleCase(domaintext)}.`
+		outtext+=`\n\tLore states that ${(gender=='m')?"his":"her"} home is ${domaintext.titleCase()}.`
 	
 		//Output
 		domUtil.byId("ta_output").value = domUtil.byId("ta_output").value + `You have unleashed ${name} `  + outtext + "\n"
@@ -122,6 +125,7 @@ define(["gen/evil/data","util/dom"],function(data, domUtil) {
 		txt  =`${data.titlesData.titles[_type][domUtil.random(data.titlesData.titles[_type])]} of ${realms[realm][domUtil.random(realms[realm])]}`
 		return txt
 	}
+	
 	return{
 		gentitle:gentitle,
 		generate:generate,

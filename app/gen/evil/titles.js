@@ -1,31 +1,28 @@
-define(["gen/evil/data",'util/dom'],function(data,domutils){
+define(["gen/evil/data",'util/dom'],function(data, domUtil){
 	class Title{
 		//start class
-		constructor(power,realm,realmnumber){
-			this.ownerhistory =[]
-			this.history=[]
-			this.power = power
-			if (realm===undefined){
+		constructor(power, realm, realmNumber) {
+			this.ownerhistory  = [];
+			this.history = [];
+			this.power = power;
+			if (realm === undefined) {
 				domUtil.random(data.realmData.realmtypes)
 			}else{
 				this.realm = realm
 			}
 			
-			if (realmnumber===undefined){
-				this.realmnumber=domutils.random(data.realmData.realms[realm])
+			if (realmNumber === undefined) {
+				this.realmNumber = domUtil.random(data.realmData.realms[realm]);
+			} else {
+				this.realmNumber = realmNumber;
 			}
-			else
-			{
-				this.realmnumber = realmnumber
-			}
-			this.rank = this.makenewRank()
-
-			
+			this.rank = this.makeNewRank();
 		}
-		makenewRank(desiredPower,range){
+
+		makeNewRank(desiredPower,range){
 			let powertoget = desiredPower
 			if (range === undefined){
-				range = domutils.randomInt(data.titlesData.variance)+1
+				range = domUtil.randomInt(data.titlesData.variance)+1
 			}
 			let min = Math.max(desiredPower-range,1)
 			let max = Math.min(desiredPower+range,data.titlesData.maxpower)
@@ -33,9 +30,9 @@ define(["gen/evil/data",'util/dom'],function(data,domutils){
 			for (var i =  max; i >= min; i--) {
 				possibletitles=possibletitles.concat(data.titlesData.bypower[i])
 			}
-			var rank=domutils.random(possibletitles)
+			var rank=domUtil.random(possibletitles)
 			let difference = powertoget - rank.power 
-			var adj= domutils.random(data.titlesData.titleAdjPwr[difference.toString()])
+			var adj= domUtil.random(data.titlesData.titleAdjPwr[difference.toString()])
 			console.log({adjective:adj,rank:rank})
 			return {adjective:adj,rank:rank}
 		}
