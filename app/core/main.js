@@ -27,6 +27,7 @@ define([
 	
 	// Get the element with id="defaultOpen" and click on it
 	domUtil.byId("defaultOpen").click(); 
+
 	domReady(function(){
 		document.querySelector('#btn_generate').addEventListener('click', evilGenBasic.generate)
 	});

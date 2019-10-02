@@ -1,9 +1,10 @@
 "use strict";
 define(['util/dom','gen/evil/data'],function(domutils,data){
 	class actor{
-		constructor(name,title){
+		constructor(name,gender,title,appearance){
 			this.name = name
 			this.maintitle = title
+			this.gender=gender
 			this.realmtype=""
 			this.home={}
 			this.titles=[]
@@ -13,6 +14,7 @@ define(['util/dom','gen/evil/data'],function(domutils,data){
 			this.weapon={}
 			this.resentment={}
 			this.personality={}
+			this.appearance=appearance
 		}
 		getEffPowerBase(){
 			this.power=this.maintitle.power
@@ -53,7 +55,7 @@ define(['util/dom','gen/evil/data'],function(domutils,data){
 		//get weapon
 		//reclamation
 		
-	}
+		}
 	}
 	
 	class ActorFactory {
@@ -82,6 +84,7 @@ define(['util/dom','gen/evil/data'],function(domutils,data){
 		var namex = this.donamesRand()
 		var name = namex[0]
 		var gender = namex[1].toLowerCase()
+		
 		}
 		constructor(){
 			this.titlesDatalist={};

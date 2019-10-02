@@ -5,6 +5,7 @@ class Data {
 		this.powersData = {};
 		this.weaponsData = {};
 		this.titlesData = {};
+		this.appearanceData={};
 		this.load();
 	}
 
@@ -63,6 +64,17 @@ class Data {
 		xmlhttp.open("GET", "/data/gen/evil/titles.json", false);
 		xmlhttp.send(); 
 	}
+	loadAppearances(callback) {
+		let xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function(self) {
+			if (this.readyState == 4 && this.status == 200) {
+			callback(JSON.parse(xmlhttp.responseText));
+			
+			}
+		};
+		xmlhttp.open("GET", "/data/gen/evil/appearance.json", false);
+		xmlhttp.send(); 
+	}
 
 	buildTitleList() {
 		let self = this;
@@ -114,6 +126,11 @@ class Data {
 			self.titlesData = response;
 			self.buildTitleList();
 			console.log("loaded titles");
+		});
+		this.loadAppearances(function(response) {
+			self.appearanceData = response;
+			self.buildTitleList();
+			console.log("loaded appearance");
 		});
 	}
 }
