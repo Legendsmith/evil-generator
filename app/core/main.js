@@ -21,8 +21,6 @@ define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data','ge
 	domUtil.byId("defaultOpen").click(); 
 	//////////////////
 	//Global functions, used ubiquitously.
-	titles = new Title();
-	console.log(Title)
 
 	domReady(function(){
 		document.querySelector('#btn_generate').addEventListener('click', evilGenBasic.generate)

@@ -1,43 +1,54 @@
-define(["gen/evil/data",'util/dom'],function(data,domutils){
+"use strict";
+
+define(["gen/evil/data",'util/dom'],function(data,domUtil){
 	class Title{
 		//start class
 		constructor(power,realm,realmnumber){
 			this.ownerhistory =[]
 			this.history=[]
 			this.power = power
+			console.log(power)
 			if (realm===undefined){
-				domUtil.random(data.realmData.realmtypes)
+				realm= domUtil.random(data.realmData.realmtypes)
 			}else{
 				this.realm = realm
 			}
 			
 			if (realmnumber===undefined){
-				this.realmnumber=domutils.random(data.realmData.realms[realm])
+				this.realmnumber=domUtil.random(data.realmData.realms[realm])
 			}
 			else
 			{
 				this.realmnumber = realmnumber
 			}
-			this.rank = this.makenewRank()
+			this.rank = this.makenewRank(power,3)
+			this.test(this.rank)
 
 			
 		}
-		makenewRank(desiredPower,range){
-			let powertoget = desiredPower
-			if (range === undefined){
-				range = domutils.randomInt(data.titlesData.variance)+1
-			}
-			let min = Math.max(desiredPower-range,1)
-			let max = Math.min(desiredPower+range,data.titlesData.maxpower)
+		makenewRank(desiredPower){
+			let powertoget = Math.min(desiredPower, data.titlesData.maxpower)
+			let min = Math.max(desiredPower+data.titlesData.variancelow,1)
+			let max = Math.min(desiredPower+data.titlesData.variancehigh,data.titlesData.maxpower)
+			console.log(min,max)
 			var possibletitles = []
-			for (var i =  max; i >= min; i--) {
+			for (var i = min; i < max; i++) {
 				possibletitles=possibletitles.concat(data.titlesData.bypower[i])
 			}
-			var rank=domutils.random(possibletitles)
+			var rank=domUtil.random(possibletitles)
+			console.log(possibletitles)
 			let difference = powertoget - rank.power 
-			var adj= domutils.random(data.titlesData.titleAdjPwr[difference.toString()])
-			console.log({adjective:adj,rank:rank})
-			return {adjective:adj,rank:rank}
+			console.log(difference)
+			var adj= domUtil.random(data.titlesData.titleAdjPwr[difference.toString()])
+			return {adjective:adj,name:rank}
+		}
+		test(rank){
+			//prints rank to console
+			if(rank.name.o !=undefined){
+				console.log(rank.adjective.name+rank.name.o)
+			}else{
+				console.log(rank.adjective.name+rank.name.m)
+			}
 		}
 
 
