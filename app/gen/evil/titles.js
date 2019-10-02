@@ -3,7 +3,7 @@
 define(["gen/evil/data",'util/dom'],function(data,domUtil){
 	class Title{
 		//start class
-		constructor(power,realm,realmnumber){
+		constructor(power,realm,subRealmIndex){
 			this.ownerhistory =[]
 			this.history=[]
 			this.power = power
@@ -14,12 +14,12 @@ define(["gen/evil/data",'util/dom'],function(data,domUtil){
 				this.realm = realm
 			}
 			
-			if (realmnumber===undefined){
-				this.realmnumber=domUtil.random(data.realmData.realms[realm])
+			if (subRealmIndex===undefined){
+				this.subRealmIndex=domUtil.random(data.realmData.realms[realm])
 			}
 			else
 			{
-				this.realmnumber = realmnumber
+				this.subRealmIndex = subRealmIndex
 			}
 			this.rank = this.makenewRank(power,3)
 			this.test(this.rank)

@@ -1,4 +1,12 @@
-define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data','gen/evil/titles'], function(domReady, domUtil, evilGenBasic, evilGenData,Title) {
+define([
+	'core/foundry',
+	'lib/domReady',
+	'util/dom',
+	'gen/evil/basic-generator',
+	'gen/evil/data',
+	'gen/evil/titles',
+	'util/string'
+], function(foundry, domReady, domUtil, evilGenBasic, evilGenData, Title) {
 	function openPage(pageName, element) {
 		// Hide all elements with class="tabcontent" by default
 		let i, tabcontent, tablinks;
@@ -19,12 +27,7 @@ define(['lib/domReady','util/dom','gen/evil/basic-generator','gen/evil/data','ge
 	
 	// Get the element with id="defaultOpen" and click on it
 	domUtil.byId("defaultOpen").click(); 
-	//////////////////
-	//Global functions, used ubiquitously.
-
 	domReady(function(){
 		document.querySelector('#btn_generate').addEventListener('click', evilGenBasic.generate)
 	});
-
-
 });
