@@ -1,5 +1,5 @@
 // Configuration for standalone evil.
-// (But even never stands alone...)
+// (But evil never stands alone...)
 
 let hrefSplit = window.location.href.split("//")[1].split("/");
 window.prefix = "/";
