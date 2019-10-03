@@ -8,9 +8,6 @@ if (hrefSplit.length > 2) {
     window.prefix = window.location.href.split(hrefSplit[0])[1];
 }
 
-console.log(hrefSplit);
-console.log(window.prefix);
-
 requirejs.config({
     baseUrl: window.prefix + 'app',
     paths: {
