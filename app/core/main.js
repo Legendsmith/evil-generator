@@ -2,11 +2,8 @@ define([
 	'core/foundry',
 	'lib/domReady',
 	'util/dom',
-	'gen/evil/basic-generator',
-	'gen/evil/data',
-	'gen/evil/titles',
 	'util/string'
-], function(foundry, domReady, domUtil, evilGenBasic, evilGenData, Title) {
+], function(foundry, domReady, domUtil) {
 	function openPage(pageName, element) {
 		// Hide all elements with class="tabcontent" by default
 		let i, tabcontent, tablinks;
@@ -28,7 +25,82 @@ define([
 	// Get the element with id="defaultOpen" and click on it
 	domUtil.byId("defaultOpen").click(); 
 
-	domReady(function(){
-		document.querySelector('#btn_generate').addEventListener('click', evilGenBasic.generate)
+// ------------------------------------------
+// Generator load
+	window.GeneratorFoundry.load(
+		'/genfoundry/modules/evil/generator.js', 'evil'
+	);
+
+	// This should fail with nothing more than a console log.
+	window.GeneratorFoundry.load(
+		'/genfoundry/modules/cult/generator.js', 'cult'
+	);
+
+// ------------------------------------------
+// This can be moved elsewhere later.
+	// Register the submatrix for evil.
+	window.GeneratorFoundry.registerSubMatrix('evil-generator', {
+		// Response from basic-generate
+		'basic-generate': function(data) {
+			domUtil.byId("ta_output").value = domUtil.byId("ta_output").value + data.data.ta_output;
+			domUtil.byId("h3_header").innerHTML = data.data.h3_header;
+			domUtil.byId("ta_output").scrollTop = domUtil.byId("ta_output").scrollHeight;
+		}
 	});
+
+	// Register a feedback handler to do the DOM updates.
+	// This can be moved elsewhere later.
+	let generateButtonFunction = function() {
+		// Pull a line.
+		function getLine() {
+			let namelist = domUtil.byId("ta_nameput");
+			let name = "the";
+
+			// Fallback to zero here
+			let gender = 0;
+			if (namelist.value != ""){
+				let  namevalue = namelist.value.replace("	","\n");
+				let  namearray = namevalue.split("\n");
+				name = namearray[0].split(":")[0].trim()+",";
+				gender = namearray[0].split(":")[1];
+				namearray.splice(0,1);
+				let text = namearray.join("\n");
+				namelist.value = text;
+			}
+			if (gender==null){
+				gender="m"
+			}
+			return [name,gender]
+		}
+
+		let line = getLine();
+
+		window.GeneratorFoundry.worker.postMessage(
+			{
+				'source': 'evil-generator',
+				'action': 'basic-generate',
+				'name': line[0],
+				'gender': line[1],
+			}
+		);
+	}
+
+	let generateButtonFunctionCallback = function(data) {
+
+	}
+
+	domReady(function(){
+		document.querySelector('#btn_generate').addEventListener(
+			'click', generateButtonFunction);
+		document.querySelector('#btn_reseed').addEventListener(
+			'click', function() {
+				let seed0 = domUtil.byId("reseed0").value;
+				let seed1 = domUtil.byId("reseed1").value;
+				window.GeneratorFoundry.worker.postMessage(
+					{'source': 'foundry', 'action': 'reseed', 'seed0': seed0, 'seed1': seed1}
+				);
+			}
+		);
+	});
+// ------------------------------------------
 });
