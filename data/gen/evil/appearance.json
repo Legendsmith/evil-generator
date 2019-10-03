@@ -1,0 +1,93 @@
+{
+  "organic": [
+    {
+      "name": "ooze",
+      "hardness": "0",
+      "needAdj": false,
+      "needColor": true
+    },
+    {
+      "name": "flesh",
+      "hardness": "1",
+      "needAdj": true,
+      "needColor": true
+    },
+    {
+      "name": "scales",
+      "hardness": "2",
+      "needAdj": false,
+      "needColor": true
+    },
+    {
+      "name": "fur",
+      "hardness": "3",
+      "needAdj": false,
+      "needColor": true
+    },
+    {
+      "name": "plates",
+      "hardness": "4",
+      "needAdj": true,
+      "needColor": true
+    }
+  ],
+  "mineral": [
+    {
+      "name": "energy|fire",
+      "hardness": "0",
+      "needAdj": true,
+      "needColor": false
+    },
+    {
+      "name": "gas|miasma",
+      "hardness": "1",
+      "needAdj": true,
+      "needColor": true
+    },
+    {
+      "name": "liquid|oil|quicksilver",
+      "hardness": "2",
+      "needAdj": false,
+      "needColor": true
+    },
+    {
+      "name": "metal",
+      "hardness": "3",
+      "needAdj": false,
+      "needColor": false
+    },
+    {
+      "name": "stone|rock",
+      "hardness": "4",
+      "needAdj": false,
+      "needColor": true
+    }
+  ],
+  "adjs":[
+  	{
+  		"name":"harder",
+		"opposite":"softer",
+  		"organic":["thick|viscous","leathery|tough","hard|metallic","tough|thick","slab-like|hard"],
+  		"mineral":["dense|intense","dense|foggy","viscous|resinous","dense|tempered","hard|heavy"]
+  	},
+  	{
+  		"name":"softer",
+  		"opposite":"harder",
+  		"organic":["thin|watery","gaunt","smooth","fine","delicate"],
+  		"mineral":["spark-like","wispy","thin","","soft"]
+  	},
+  	{
+  		"name":"energetic",
+  		"opposite":"none",
+  		"organic":["rippling","muscular","","","rippling"],
+  		"mineral":["blazing","twisting","burning","brilliant","glowing|molten"]
+  	}
+  ],
+  "colours":[
+  	"red","green","blue","orange","yellow","grey","black","white"
+  ],
+  "extras":{
+  	"organic":"",
+  	"mineral":""
+  }
+}
