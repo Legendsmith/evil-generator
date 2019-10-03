@@ -21,7 +21,7 @@
                     
                 }
             }
-            realmshttp.open("GET","/data/gen/evil/realms.json", false);
+            realmshttp.open("GET", g_AppPrefix + "data/gen/evil/realms.json", false);
             realmshttp.send();
         }
         loadDomains(callback) {
@@ -32,7 +32,7 @@
                     
                 }
             }
-            domainshttp.open("GET","/data/gen/evil/domains.json", false);
+            domainshttp.open("GET", g_AppPrefix + "data/gen/evil/domains.json", false);
             domainshttp.send();
         }
         loadPowers(callback){
@@ -43,7 +43,7 @@
                 
                 }
             };
-            xmlhttp.open("GET", "/data/gen/evil/powers.json", false);
+            xmlhttp.open("GET", g_AppPrefix + "data/gen/evil/powers.json", false);
             xmlhttp.send(); 
         }
         loadWeapons(callback){
@@ -54,7 +54,7 @@
                 
                 }
             };
-            xmlhttp.open("GET", "/data/gen/evil/weapons.json", false);
+            xmlhttp.open("GET", g_AppPrefix + "data/gen/evil/weapons.json", false);
             xmlhttp.send(); 
         }
         loadTitles(callback) {
@@ -65,7 +65,7 @@
                 
                 }
             };
-            xmlhttp.open("GET", "/data/gen/evil/titles.json", false);
+            xmlhttp.open("GET", g_AppPrefix + "data/gen/evil/titles.json", false);
             xmlhttp.send(); 
         }
         loadAppearances(callback) {
@@ -76,7 +76,7 @@
                 
                 }
             };
-            xmlhttp.open("GET", "/data/gen/evil/appearance.json", false);
+            xmlhttp.open("GET", g_AppPrefix + "data/gen/evil/appearance.json", false);
             xmlhttp.send(); 
         }
 

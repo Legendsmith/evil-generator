@@ -28,12 +28,12 @@ define([
 // ------------------------------------------
 // Generator load
 	window.GeneratorFoundry.load(
-		'/genfoundry/modules/evil/generator.js', 'evil'
+		window.prefix + 'genfoundry/modules/evil/generator.js', 'evil'
 	);
 
 	// This should fail with nothing more than a console log.
 	window.GeneratorFoundry.load(
-		'/genfoundry/modules/cult/generator.js', 'cult'
+		window.prefix + 'genfoundry/modules/cult/generator.js', 'cult'
 	);
 
 // ------------------------------------------
