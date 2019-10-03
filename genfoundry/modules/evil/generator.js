@@ -142,9 +142,20 @@
     // Load data
     let data = new Data();
 
+    // Expand me to pronouns later.
+    let genders = [
+        "m",
+        "f",
+    ];
+
     // Generation function
     function generate(name, gender) {
-        console.log("generating");
+        console.log("Evil is generating...");
+
+        if (gender === 0) {
+            gender = g_Random.randomFromArray(genders);
+        }
+
         let _titlemaintypeR= g_Random.randomFromArray(data.titlesData.titletypes.main)
         let _titlemaintype = _titlemaintypeR //title type raw
         let _titlemain = ""

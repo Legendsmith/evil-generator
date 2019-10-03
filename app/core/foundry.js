@@ -90,8 +90,6 @@ define(function() {
     worker.onmessage = function(event) {
         let data = event.data;
 
-        console.log(data);
-
         if (!(data.hasOwnProperty('source') && data.hasOwnProperty('action'))) {
             return;
         }

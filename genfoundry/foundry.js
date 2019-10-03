@@ -1,17 +1,34 @@
 /// This file contains a WebWorker.
 
+/// Polyfill.
+/// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul
+if (!Math.imul) Math.imul = function(a, b) {
+    var aHi = (a >>> 16) & 0xffff;
+    var aLo = a & 0xffff;
+    var bHi = (b >>> 16) & 0xffff;
+    var bLo = b & 0xffff;
+    // the shift by 0 fixes the sign on the high part
+    // the final |0 converts the unsigned value into a signed value
+    return ((aLo * bLo) + (((aHi * bLo + aLo * bHi) << 16) >>> 0) | 0);
+};
+
 String.prototype.titleCase = function() {
-    var str = this.toLowerCase().split(' ');
+    let str = this.toLowerCase().split(' ');
     let final = [ ];
-    for(let	word of str){
+    for(let	word of str) {
         final.push(word.charAt(0).toUpperCase()+ word.slice(1));
     }
-    return final.join(' ')
+    return final.join(' ');
 }
 
-// Global Random source.
-g_Random = (function() {
 
+/**
+ * PCG Random Source (16-bit generator).
+ * 
+ * Requires a bunch of internal code to make it work.
+ * JavaScript's 64-bit support is ... lacking.
+ */
+g_Random = (function() {
     /**
      * PCG random source.
      */
@@ -20,8 +37,8 @@ g_Random = (function() {
          * Creates a new PCG instance.
          */
         constructor() {
-            this.state = 0x853c49e6748fea9b;
-            this.inc = 0xda3e39cb94b95bdb;
+            this.state = 0xe39b;
+            this.inc = 0x5bdb;
         }
 
         /**
@@ -46,10 +63,11 @@ g_Random = (function() {
          */
         random() {
             let s = this.state;
-            this.state = s * 6364136223846793005 + this.inc;
-            let xored = ((s >> 18) ^ s) >> 27;
-            let roted = s >> 59;
-            return (xored >> roted) | (xored << (-roted) & 31);
+            this.state = Math.imul(s, 747796405) + this.inc;
+            let xored = ((s >>> 10) ^ s) >> 12;
+            let roted = s >>> 28;
+            let result = (xored >>> roted) | (xored << (-roted) & 31);
+            return result;
         }
 
         /**
@@ -60,12 +78,13 @@ g_Random = (function() {
          */
         randomRange(maxValue) {
             let threshold = -maxValue % maxValue;
-            while (true) {
+            for (let i = 0; i < 50; i++) {
                 let r = this.random();
                 if (r >= threshold) {
                     return r % maxValue;
                 }
             }
+            return this.random() % maxValue;
         }
     };
 
@@ -109,6 +128,25 @@ let matrix = {
 
 function registerSubMatrix(root, handlers) {
     matrix[root] = handlers;
+}
+
+matrix.foundry.reseed = function(data) {
+    let date = new Date();
+
+    let seed0 = date.valueOf() >>> 4;
+    let seed1 = date.valueOf() >>> 7;
+
+    if (data.hasOwnProperty('seed0') && data.hasOwnProperty('seed1')) {
+        seed0 = parseInt(data.seed0) || seed0;
+        seed1 = parseInt(data.seed1) || seed1;
+    }
+
+    seed0 = seed0 % 0xFFFF;
+    seed1 = seed1 % 0xFFFF;
+
+    g_Random.seed(seed0, seed1);
+
+    console.log(g_Random.state, g_Random.inc);
 }
 
 matrix.foundry.load = function(data) {

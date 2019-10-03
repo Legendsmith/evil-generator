@@ -55,7 +55,9 @@ define([
 		function getLine() {
 			let namelist = domUtil.byId("ta_nameput");
 			let name = "the";
-			let gender = domUtil.p("m|f");
+
+			// Fallback to zero here
+			let gender = 0;
 			if (namelist.value != ""){
 				let  namevalue = namelist.value.replace("	","\n");
 				let  namearray = namevalue.split("\n");
@@ -89,9 +91,16 @@ define([
 
 	domReady(function(){
 		document.querySelector('#btn_generate').addEventListener(
-			'click',
-			generateButtonFunction
-		)
+			'click', generateButtonFunction);
+		document.querySelector('#btn_reseed').addEventListener(
+			'click', function() {
+				let seed0 = domUtil.byId("reseed0").value;
+				let seed1 = domUtil.byId("reseed1").value;
+				window.GeneratorFoundry.worker.postMessage(
+					{'source': 'foundry', 'action': 'reseed', 'seed0': seed0, 'seed1': seed1}
+				);
+			}
+		);
 	});
 // ------------------------------------------
 });
