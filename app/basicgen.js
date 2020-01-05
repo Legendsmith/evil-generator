@@ -44,7 +44,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		while (power>1){
 			var titleNextType = utils.randum(data.titlesData.titletypes.secondary)
 			var titleNext = utils.randum(data.titlesData.titles[titleNextType])
-			var i = utils.randumInt(realmlist.length)
+			var i = utils.randumInt(realmlist.length-1)
 			var realmNext = realmlist[i]
 			realmlist.splice(i,1)
 			var genAdjN=""
@@ -63,7 +63,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		if(titlelist[0] !=undefined && titlelist[1]==undefined){
 			outtext+=` ${(gender=='m')?"He":"She"} also holds the title ${titlelist[0]}.`
 		}else if(titlelist[1]!=undefined){
-			outtext+=` ${(gender=='m')?"He":"She"} also holds the titles `
+			outtext+=` ${(gender=='f')?"He":"She"} also holds the titles `
 			for (var i = 0; i < titlelist.length-1; i++) {
 				
 				outtext+=titlelist[i]+", "
