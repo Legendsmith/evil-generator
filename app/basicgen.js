@@ -52,7 +52,7 @@ define(["app/data","app/utils"],function(data,utils) {
 					if(utils.randumInt(10)<3){
 					genAdjN = utils.randum(data.titlesData.titleAdj)
 					}
-					titlelist.push(`${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`)
+					titlelist.push(`${genAdjN}${titleNext["o"] ? titleNext["o"] : titleNext[gender]} of ${realmNext}`)
 					power -= titleNext.power
 			}else if(antistall>10 || realmlist.length <1){
 				break;
@@ -63,7 +63,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		if(titlelist[0] !=undefined && titlelist[1]==undefined){
 			outtext+=` ${(gender=='m')?"He":"She"} also holds the title ${titlelist[0]}.`
 		}else if(titlelist[1]!=undefined){
-			outtext+=` ${(gender=='f')?"He":"She"} also holds the titles `
+			outtext+=` ${(gender=='m')?"He":"She"} also holds the titles `
 			for (var i = 0; i < titlelist.length-1; i++) {
 				
 				outtext+=titlelist[i]+", "
