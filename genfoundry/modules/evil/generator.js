@@ -159,6 +159,7 @@
         let _titlemaintypeR= g_Random.randomFromArray(data.titlesData.titletypes.main)
         let _titlemaintype = _titlemaintypeR //title type raw
         let _titlemain = ""
+        gender = gender.toLowerCase()
         _titlemain = g_Random.randomFromArray(data.titlesData.titles[_titlemaintype])
         let _realmtype= g_Random.randomFromArray(data.realmData.realmtypes)
         let _realm = g_Random.randomFromArray(data.realmData.realms[_realmtype])
@@ -177,7 +178,7 @@
         while (power>1){
             let titleNextType = g_Random.randomFromArray(data.titlesData.titletypes.secondary)
             let titleNext = g_Random.randomFromArray(data.titlesData.titles[titleNextType])
-            let i = g_Random.randomRange(realmlist.length)
+            let i = g_Random.randomRange(realmlist.length-1)
             let realmNext = realmlist[i]
             realmlist.splice(i,1)
             let genAdjN=""

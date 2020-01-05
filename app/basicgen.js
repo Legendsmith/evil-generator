@@ -23,6 +23,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		var namex = donames()
 		var name = namex[0]
 		var gender = namex[1].toLowerCase()
+		console.log(gender)
 		var _titlemaintypeR= utils.randum(data.titlesData.titletypes.main)
 		var _titlemaintype = _titlemaintypeR //title type raw
 		var _titlemain = ""
