@@ -14,28 +14,35 @@
 </head>
 <body>
 	<div id="topbar"> <button class="tablink" onclick="openPage('basic',this)" id="defaultOpen">Basic Generator</button>
-	<button class="tablink" onclick="openPage('advanced',this)">Advanced Generator</button>
-	<button class="tablink" onclick="openPage('history',this)">Demonic Histories Generator</button>
-	<button class="tablink" onclick="openPage('about',this)">About</button></div>
+		<button class="tablink" onclick="openPage('advanced',this)">Advanced Generator</button>
+		<button class="tablink" onclick="openPage('history',this)">Demonic Histories Generator</button>
+		<button class="tablink" onclick="openPage('about',this)">About</button>
+	</div>
 	<div id="basic" class="tabcontent">
-	<center><h3 id="h3_header">An Ancient Evil Awakens...</h3></center><br />
-	<div id="div_nameput">Enter Names (Optional)<br />
-	<textarea id="ta_nameput"></textarea></br></div>
-	<div id="div_output"><br/><textarea id="ta_output"></textarea></div>
-<center>
-	<div>
-		<button class="fancybtn" id="btn_generate">Break the Seal</button>
+		<center><h3 id="h3_header">An Ancient Evil Awakens...</h3></center><br />
+		<div class="row">
+		<div id="div_nameput">Enter Names (Optional)<br />
+			<textarea id="ta_nameput"></textarea></br>
+		</div>
+		<div id="div_output"><br/><textarea id="ta_output"></textarea></div>
 	</div>
-	<div class="reseeding">
-		<button class="fancybtn" id="btn_reseed">Force Reseed</button>
-		<input id="reseed0" value="58267">
-		<input id="reseed1" value="23515">
-	</div>
-	<div>
+	<center>
+		<div>
+			<button class="fancybtn" id="btn_generate">Break the Seal</button>
+		</div>
+		<div class="reseeding">
+			<button class="fancybtn" id="btn_reseed">Force Reseed</button>
+			<input id="reseed0" value="58267">
+			<input id="reseed1" value="23515">
+		</div>
+		<div>
 		<p class="subnote">Need Names? Try <a href="http://www.rinkworks.com/namegen/">Rinkworks Name generator.</a> You can copy and paste the results table right into the Enter Names box.
 		</p>
 		<p class="subnote">Names can optionally be gendered with this syntax: NAME:F for female or NAME:M for male.</p>
-</center></div></div>
+
+		</div>
+	</center>
+</div>
 
 <div id="advanced" class="tabcontent">
 <h3>In development!</h3>

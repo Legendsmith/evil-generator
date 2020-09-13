@@ -180,6 +180,7 @@ a:active {
   float: left;
   width:600px;
   height:430px;
+  margin-right: auto;
 }
 /*buttons*/
 .fancybtn {
@@ -238,10 +239,14 @@ a:active {
   background-color: #777;
 }
 .tabcontent{
-  float: left;
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   left:50%;
   margin-left: -25%;
   width: 50%
+}
+.row{
+	flex-direction: row;
+	display: flex;
 }
