@@ -20,7 +20,7 @@ define(function() {
         handler(data);
     }
 
-    let worker = new Worker(window.prefix + 'genfoundry/foundry.js');
+    let worker = new Worker('/genfoundry/foundry.js');
     window.GeneratorFoundry.worker = worker;
     window.GeneratorFoundry.worker._isready = false;
 

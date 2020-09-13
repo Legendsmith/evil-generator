@@ -13,11 +13,11 @@
 <link rel="stylesheet" type="text/css" href="appstyle.css">
 </head>
 <body>
-	<div id="topbar"> <button class="tablink" onclick="openPage('basic',this)" id="defaultOpen">Basic Generator</button>
+	<button class="tablink" onclick="openPage('basic',this)" id="defaultOpen">Basic Generator</button>
 	<button class="tablink" onclick="openPage('advanced',this)">Advanced Generator</button>
 	<button class="tablink" onclick="openPage('history',this)">Demonic Histories Generator</button>
-	<button class="tablink" onclick="openPage('about',this)">About</button></div>
 	<div id="basic" class="tabcontent">
+<div class="main">
 	<center><h3 id="h3_header">An Ancient Evil Awakens...</h3></center><br />
 	<div id="div_nameput">Enter Names (Optional)<br />
 	<textarea id="ta_nameput"></textarea></br></div>
@@ -35,25 +35,16 @@
 		<p class="subnote">Need Names? Try <a href="http://www.rinkworks.com/namegen/">Rinkworks Name generator.</a> You can copy and paste the results table right into the Enter Names box.
 		</p>
 		<p class="subnote">Names can optionally be gendered with this syntax: NAME:F for female or NAME:M for male.</p>
+	</div>
 </center></div></div>
 
 <div id="advanced" class="tabcontent">
-<h3>In development!</h3>
-	 <p>Customise more aspects of the evil entity you generate.</p>
+	<div class="main"><h3>In development!</h3>
+	 <p>Customise more aspects of the evil entity you generate.</p></div>
 </div>
 <div id="history" class="tabcontent">
-<h3>In development!</h3>
-		<p>Use generated Evils to generate histories of demonic intrigue and conquest. Witness dark Ascensions, power plays, and ambition.</p>
-</div>
-<div id="about" class="tabcontent">
-		<br>
-		<h4>Developers</h4>
-		<p>Legendsmith: 
-		Original concept, main code, and primary development. <a href="https://github.com/legendsmith">Github</a></p>
-		<p>A.W. Stanley:
-		Webworkers, development assistance. <a href="https://twitter.com/orloglausa">Twitter</a>, <a href="https://github.com/awstanley">Github</a></p>
-		<p>Background created with brushes from<a href="http://www.obsidiandawn.com
-">Obsidian Dawn</a></p>
+	<div class="main"><h3>In development!</h3>
+		<p>Use generated Evils to generate histories of demonic intrigue and conquest. Witness dark Ascensions, power plays, and ambition.</p></div>
 </div>
 
 </body>
