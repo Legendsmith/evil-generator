@@ -1,5 +1,15 @@
 /// This file contains a WebWorker.
 
+// -- Non root hack
+g_AppPrefix = location.toString();
+let locationSplit = g_AppPrefix.split("//")[1].split("/");
+if (locationSplit.length > 2) {
+    // Determine prefix.
+    g_AppPrefix = g_AppPrefix.split(locationSplit[0])[1];
+}
+g_AppPrefix = g_AppPrefix.split("/genfoundry/", 1)[0] + "/";
+// -- Non root hack
+
 /// Polyfill.
 /// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul
 if (!Math.imul) Math.imul = function(a, b) {
@@ -145,8 +155,6 @@ matrix.foundry.reseed = function(data) {
     seed1 = seed1 % 0xFFFF;
 
     g_Random.seed(seed0, seed1);
-
-    console.log(g_Random.state, g_Random.inc);
 }
 
 matrix.foundry.load = function(data) {
