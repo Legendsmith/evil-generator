@@ -23,6 +23,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		var namex = donames()
 		var name = namex[0]
 		var gender = namex[1].toLowerCase()
+		console.log(gender)
 		var _titlemaintypeR= utils.randum(data.titlesData.titletypes.main)
 		var _titlemaintype = _titlemaintypeR //title type raw
 		var _titlemain = ""
@@ -44,7 +45,7 @@ define(["app/data","app/utils"],function(data,utils) {
 		while (power>1){
 			var titleNextType = utils.randum(data.titlesData.titletypes.secondary)
 			var titleNext = utils.randum(data.titlesData.titles[titleNextType])
-			var i = utils.randumInt(realmlist.length)
+			var i = utils.randumInt(realmlist.length-1)
 			var realmNext = realmlist[i]
 			realmlist.splice(i,1)
 			var genAdjN=""
@@ -52,7 +53,7 @@ define(["app/data","app/utils"],function(data,utils) {
 					if(utils.randumInt(10)<3){
 					genAdjN = utils.randum(data.titlesData.titleAdj)
 					}
-					titlelist.push(`${genAdjN}${titleNext["o"] || titleNext[gender]} of ${realmNext}`)
+					titlelist.push(`${genAdjN}${titleNext["o"] ? titleNext["o"] : titleNext[gender]} of ${realmNext}`)
 					power -= titleNext.power
 			}else if(antistall>10 || realmlist.length <1){
 				break;
