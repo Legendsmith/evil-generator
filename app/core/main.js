@@ -13,7 +13,7 @@ define([
 		}
 	
 		// Show the specific tab content
-		domUtil.byId(pageName).style.display = "block";
+		domUtil.byId(pageName).style.display = "flex";
 		tablinks = document.getElementsByClassName("tablink");
 		for (let i = 0; i < tablinks.length; i++) {
 			tablinks[i].style.background = "";
