@@ -101,6 +101,9 @@ define([
 				);
 			}
 		);
+		domUtil.byId("reseed0").value=Math.ceil(Math.random()*1000) * Math.ceil(Math.random()*10)
+		domUtil.byId("reseed1").value=Math.ceil(Math.random()*1000) * Math.ceil(Math.random()*10)
+		document.querySelector('#btn_reseed').click();
 	});
 // ------------------------------------------
 });
