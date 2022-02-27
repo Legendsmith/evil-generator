@@ -88,6 +88,9 @@ g_Random = (function() {
          */
         randomRange(maxValue) {
             let threshold = -maxValue % maxValue;
+            if (maxValue==0) {
+                return 0
+            }
             for (let i = 0; i < 50; i++) {
                 let r = this.random();
                 if (r >= threshold) {
@@ -114,10 +117,6 @@ g_Random = (function() {
 
 g_Random.randomFromArray = function(data) {
     var ni = this.randomRange(data.length - 1);
-    if (isNaN(ni)){
-        console.log("NaN detected, array return set to 0")
-        ni=0
-    }
     return data[ni];
 }
 
