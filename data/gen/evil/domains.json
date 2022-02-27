@@ -59,7 +59,7 @@
 			"descriptorclass":["movement","corrupt","purge"]
 		},
 		"beasts":{
-			"noun":["beasts"],
+			"noun":["beasts","creatures"],
 			"topleveladj":"wild",
 			"adjective":["beastial","savage"],
 			"opposite":"elder",
@@ -67,7 +67,7 @@
 			"descriptorclass":["corrupt","dead"]
 		},
 		"elder":{
-			"noun":["ruin"],
+			"noun":["ruin","doom"],
 			"topleveladj":"Elder",
 			"adjective":["elder","ancient","outer"],
 			"opposite":"beasts",
@@ -83,7 +83,7 @@
 			"descriptorclass":["corrupt","dead","movement"]
 		},
 		"desert":{
-			"noun":["thirst","desolation","sand","dust"],
+			"noun":["thirst","sand","dust"],
 			"topleveladj":"desolate",
 			"adjective":["dry","parched"],
 			"opposite":"jungle",

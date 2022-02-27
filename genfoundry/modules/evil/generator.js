@@ -165,6 +165,7 @@
         let _realm = g_Random.randomFromArray(data.realmData.realms[_realmtype])
         let genAdj=""
         let power = _titlemain.power
+        console.log("Power of this generation: "+power)
         if (power == 1){
             power=2;
         };

@@ -114,6 +114,10 @@ g_Random = (function() {
 
 g_Random.randomFromArray = function(data) {
     var ni = this.randomRange(data.length - 1);
+    if (isNaN(ni)){
+        console.log("NaN detected, array return set to 0")
+        ni=0
+    }
     return data[ni];
 }
 
